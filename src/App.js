@@ -57,7 +57,7 @@ class App extends React.Component {
     };
     const homepageStyle = {
       backgroundColor: 'rgba(128, 128, 128, 0.05)',
-      marginTop: '10px',
+      paddingTop: '10px',
     };
     switch (step) {
       case 1:

@@ -90,11 +90,11 @@ const BasicInformation = ({ nextStep, handleChange, values }) => {
                 className='btn'
                 style={{
                   color: 'white',
-                  backgroundColor: 'orange',
+                  backgroundColor: '#ff8c00',
                   minWidth: '10vw',
                 }}
               >
-                Save
+                SAVE
               </button>
               &nbsp;&nbsp;
               <button
@@ -103,7 +103,7 @@ const BasicInformation = ({ nextStep, handleChange, values }) => {
                 style={{ minWidth: '10vw' }}
                 onClick={Continue}
               >
-                Next
+                NEXT
               </button>
             </div>
           </form>
