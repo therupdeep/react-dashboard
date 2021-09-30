@@ -25,13 +25,13 @@ import './../src/App.css';
 class App extends React.Component {
   state = {
     step: 1,
+    isCheckedvisibleOnStorefront: false,
     productName: '',
     sku: '',
     productType: '',
     defaultPrice: '',
     brand: '',
     weight: '',
-    categories: '',
   };
 
   // go back to previous step
@@ -50,26 +50,31 @@ class App extends React.Component {
   handleChange = (input) => (e) => {
     this.setState({ [input]: e.target.value });
   };
+  toggleChange = () => {
+    this.setState({
+      isCheckedvisibleOnStorefront: !this.state.isCheckedvisibleOnStorefront,
+    });
+  };
 
   render() {
     const step = this.state.step;
     const {
+      isCheckedvisibleOnStorefront,
       productName,
       sku,
       productType,
       defaultPrice,
       brand,
       weight,
-      categories,
     } = this.state;
     const values = {
+      isCheckedvisibleOnStorefront,
       productName,
       sku,
       productType,
       defaultPrice,
       brand,
       weight,
-      categories,
     };
     switch (step) {
       case 1:
@@ -80,6 +85,7 @@ class App extends React.Component {
               <Sidemenu step={step} />
               <BasicInformation
                 nextStep={this.nextStep}
+                toggleChange={this.toggleChange}
                 handleChange={this.handleChange}
                 values={values}
               />

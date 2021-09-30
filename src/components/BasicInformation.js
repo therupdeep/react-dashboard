@@ -1,7 +1,7 @@
 import React from 'react';
 import './../css/component.css';
 
-const BasicInformation = ({ nextStep, handleChange, values }) => {
+const BasicInformation = ({ nextStep, toggleChange, handleChange, values }) => {
   const Continue = (e) => {
     e.preventDefault();
     nextStep();
@@ -23,6 +23,8 @@ const BasicInformation = ({ nextStep, handleChange, values }) => {
                   class='form-check-input'
                   type='checkbox'
                   id='gridCheck'
+                  defaultChecked={values.isCheckedvisibleOnStorefront}
+                  onChange={toggleChange}
                 />
                 <label class='form-check-label' for='gridCheck'>
                   Visible on Storefront
@@ -35,8 +37,9 @@ const BasicInformation = ({ nextStep, handleChange, values }) => {
                 <input
                   type='text'
                   class='form-control'
-                  id='inputEmail4'
                   placeholder='Sample Product Name'
+                  value={values.productName}
+                  onChange={handleChange('productName')}
                 />
               </div>
               <div class='form-group col'>
@@ -44,35 +47,60 @@ const BasicInformation = ({ nextStep, handleChange, values }) => {
                 <input
                   type='text'
                   class='form-control'
-                  id='inputPassword4'
                   placeholder='THK-1138'
+                  value={values.sku}
+                  onChange={handleChange('sku')}
                 />
               </div>
             </div>
             <div class='row'>
               <div class='form-group col'>
                 <label for='productType'>Product Type</label>
-                <select class='form-control'>
-                  <option selected>Physical</option>
-                  <option>...</option>
+                <select
+                  class='form-control'
+                  onChange={handleChange('productType')}
+                >
+                  <option
+                    selected={values.productType === 'Physical'}
+                    value='Physical'
+                  >
+                    Physical
+                  </option>
+                  <option selected={values.productType === '...'} value='...'>
+                    ...
+                  </option>
                 </select>
               </div>
               <div class='form-group col'>
                 <label for='defaultPrice'>Default Price(including tax)</label>
-                <input type='text' class='form-control' placeholder='₹ 35' />
+                <input
+                  type='text'
+                  class='form-control'
+                  placeholder='₹ 35'
+                  value={values.defaultPrice}
+                  onChange={handleChange('defaultPrice')}
+                />
               </div>
             </div>
             <div class='row'>
               <div class='form-group col'>
                 <label for='Brand'>Brand</label>
-                <select class='form-control'>
-                  <option></option>
-                  <option>...</option>
+                <select class='form-control' onChange={handleChange('brand')}>
+                  <option selected={values.brand === ''} value=''></option>
+                  <option selected={values.brand === '...'} value='...'>
+                    ...
+                  </option>
                 </select>
               </div>
               <div class='form-group col'>
                 <label for='Weight'>Weight</label>
-                <input type='text' class='form-control' placeholder='0' />
+                <input
+                  type='text'
+                  class='form-control'
+                  placeholder='0'
+                  value={values.weight}
+                  onChange={handleChange('weight')}
+                />
               </div>
             </div>
             <br />
