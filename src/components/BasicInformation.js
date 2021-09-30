@@ -1,15 +1,8 @@
 import React from 'react';
 import './../../src/App.css';
+import './../css/component.css';
 
 const BasicInformation = ({ nextStep, handleChange, values }) => {
-  const tabCard = {
-    minWidth: '75vw',
-    height: '70vh',
-    backgroundColor: 'white',
-    padding: '25px',
-    marginTop: '10px',
-    boxShadow: '0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)',
-  };
   const Continue = (e) => {
     e.preventDefault();
     nextStep();
@@ -20,7 +13,7 @@ const BasicInformation = ({ nextStep, handleChange, values }) => {
         <h5 style={{ fontWeight: '600' }}>Product Information</h5>
         <div>Information to help define a product</div>
       </div>
-      <div style={tabCard}>
+      <div className='tab-card'>
         <h5 style={{ fontWeight: '600' }}>Basic Information</h5>
         <br />
         <div>
