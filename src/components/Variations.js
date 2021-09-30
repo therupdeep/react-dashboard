@@ -1,6 +1,5 @@
 import React from 'react';
 import './../css/component.css';
-import './../../src/App.css';
 
 const Variations = ({ prevStep, nextStep, handleChange, values }) => {
   const Continue = (e) => {

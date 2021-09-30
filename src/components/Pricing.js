@@ -1,6 +1,5 @@
 import React from 'react';
 import './../css/component.css';
-import './../../src/App.css';
 
 const Pricing = ({ prevStep, nextStep, handleChange, values }) => {
   const Continue = (e) => {

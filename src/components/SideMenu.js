@@ -1,5 +1,5 @@
 import React from 'react';
-import './../../src/App.css';
+import './../css/component.css';
 
 const Sidemenu = ({ step }) => {
   const mystyle = (number) => {

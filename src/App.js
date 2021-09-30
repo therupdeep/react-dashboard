@@ -71,14 +71,10 @@ class App extends React.Component {
       weight,
       categories,
     };
-    const homepageStyle = {
-      backgroundColor: 'rgba(128, 128, 128, 0.05)',
-      paddingTop: '10px',
-    };
     switch (step) {
       case 1:
         return (
-          <div style={homepageStyle}>
+          <div className='homepage'>
             <Navbar />
             <div style={{ display: 'flex' }}>
               <Sidemenu step={step} />
@@ -92,7 +88,7 @@ class App extends React.Component {
         );
       case 2:
         return (
-          <div style={homepageStyle}>
+          <div className='homepage'>
             <Navbar />
             <div style={{ display: 'flex' }}>
               <Sidemenu step={step} />
@@ -107,7 +103,7 @@ class App extends React.Component {
         );
       case 3:
         return (
-          <div style={homepageStyle}>
+          <div className='homepage'>
             <Navbar />
             <div style={{ display: 'flex' }}>
               <Sidemenu step={step} />
@@ -122,7 +118,7 @@ class App extends React.Component {
         );
       case 4:
         return (
-          <div style={homepageStyle}>
+          <div className='homepage'>
             <Navbar />
             <div style={{ display: 'flex' }}>
               <Sidemenu step={step} />
@@ -137,7 +133,7 @@ class App extends React.Component {
         );
       case 5:
         return (
-          <div style={homepageStyle}>
+          <div className='homepage'>
             <Navbar />
             <div style={{ display: 'flex' }}>
               <Sidemenu step={step} />
@@ -152,7 +148,7 @@ class App extends React.Component {
         );
       case 6:
         return (
-          <div style={homepageStyle}>
+          <div className='homepage'>
             <Navbar />
             <div style={{ display: 'flex' }}>
               <Sidemenu step={step} />
@@ -167,7 +163,7 @@ class App extends React.Component {
         );
       case 7:
         return (
-          <div style={homepageStyle}>
+          <div className='homepage'>
             <Navbar />
             <div style={{ display: 'flex' }}>
               <Sidemenu step={step} />
@@ -182,7 +178,7 @@ class App extends React.Component {
         );
       case 8:
         return (
-          <div style={homepageStyle}>
+          <div className='homepage'>
             <Navbar />
             <div style={{ display: 'flex' }}>
               <Sidemenu step={step} />
@@ -197,7 +193,7 @@ class App extends React.Component {
         );
       case 9:
         return (
-          <div style={homepageStyle}>
+          <div className='homepage'>
             <Navbar />
             <div style={{ display: 'flex' }}>
               <Sidemenu step={step} />
@@ -212,7 +208,7 @@ class App extends React.Component {
         );
       case 10:
         return (
-          <div style={homepageStyle}>
+          <div className='homepage'>
             <Navbar />
             <div style={{ display: 'flex' }}>
               <Sidemenu step={step} />
@@ -227,7 +223,7 @@ class App extends React.Component {
         );
       case 11:
         return (
-          <div style={homepageStyle}>
+          <div className='homepage'>
             <Navbar />
             <div style={{ display: 'flex' }}>
               <Sidemenu step={step} />
@@ -242,7 +238,7 @@ class App extends React.Component {
         );
       case 12:
         return (
-          <div style={homepageStyle}>
+          <div className='homepage'>
             <Navbar />
             <div style={{ display: 'flex' }}>
               <Sidemenu step={step} />
@@ -257,7 +253,7 @@ class App extends React.Component {
         );
       case 13:
         return (
-          <div style={homepageStyle}>
+          <div className='homepage'>
             <Navbar />
             <div style={{ display: 'flex' }}>
               <Sidemenu step={step} />
@@ -272,7 +268,7 @@ class App extends React.Component {
         );
       case 14:
         return (
-          <div style={homepageStyle}>
+          <div className='homepage'>
             <Navbar />
             <div style={{ display: 'flex' }}>
               <Sidemenu step={step} />
@@ -287,7 +283,7 @@ class App extends React.Component {
         );
       case 15:
         return (
-          <div style={homepageStyle}>
+          <div className='homepage'>
             <Navbar />
             <div style={{ display: 'flex' }}>
               <Sidemenu step={step} />
@@ -302,7 +298,7 @@ class App extends React.Component {
         );
       case 16:
         return (
-          <div style={homepageStyle}>
+          <div className='homepage'>
             <Navbar />
             <div style={{ display: 'flex' }}>
               <Sidemenu step={step} />
@@ -317,7 +313,7 @@ class App extends React.Component {
         );
       case 17:
         return (
-          <div style={homepageStyle}>
+          <div className='homepage'>
             <Navbar />
             <div style={{ display: 'flex' }}>
               <Sidemenu step={step} />
@@ -332,7 +328,7 @@ class App extends React.Component {
         );
       case 18:
         return (
-          <div style={homepageStyle}>
+          <div className='homepage'>
             <Navbar />
             <div style={{ display: 'flex' }}>
               <Sidemenu step={step} />

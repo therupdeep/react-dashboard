@@ -1,3 +1,7 @@
 div {
   font-size: 0.95rem;
 }
+.homepage {
+  background-color: rgba(128, 128, 128, 0.05);
+  padding-top: 10px;
+}
