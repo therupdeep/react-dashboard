@@ -6,3 +6,23 @@
   margin-top: 10px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
+.nav-link {
+  color: black;
+  padding: 0.25rem 10px 0.25rem 10px;
+}
+.nav-link:hover {
+  color: black;
+}
+.nav-link.active {
+  color: #3469fa;
+  border-left: 2px solid #3469fa;
+}
+.active:hover {
+  color: #3469fa;
+}
+.menu-heading {
+  font-size: 0.85rem;
+}
+.form-group {
+  margin-bottom: 10px;
+}

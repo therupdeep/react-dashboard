@@ -2,10 +2,14 @@ import React from 'react';
 import './../css/component.css';
 import './../../src/App.css';
 
-const Description = ({ nextStep, handleChange, values }) => {
+const Description = ({ prevStep, nextStep, handleChange, values }) => {
   const Continue = (e) => {
     e.preventDefault();
     nextStep();
+  };
+  const Previous = (e) => {
+    e.preventDefault();
+    prevStep();
   };
   return (
     <div>
@@ -30,6 +34,15 @@ const Description = ({ nextStep, handleChange, values }) => {
                 }}
               >
                 SAVE
+              </button>
+              &nbsp;&nbsp;
+              <button
+                type='button'
+                className='btn btn-outline-primary'
+                style={{ minWidth: '10vw' }}
+                onClick={Previous}
+              >
+                PREVIOUS
               </button>
               &nbsp;&nbsp;
               <button

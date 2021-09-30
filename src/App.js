@@ -97,6 +97,7 @@ class App extends React.Component {
             <div style={{ display: 'flex' }}>
               <Sidemenu step={step} />
               <Description
+                prevStep={this.prevStep}
                 nextStep={this.nextStep}
                 handleChange={this.handleChange}
                 values={values}
@@ -111,6 +112,7 @@ class App extends React.Component {
             <div style={{ display: 'flex' }}>
               <Sidemenu step={step} />
               <ImagesVideos
+                prevStep={this.prevStep}
                 nextStep={this.nextStep}
                 handleChange={this.handleChange}
                 values={values}
@@ -125,6 +127,7 @@ class App extends React.Component {
             <div style={{ display: 'flex' }}>
               <Sidemenu step={step} />
               <ProductIdentifiers
+                prevStep={this.prevStep}
                 nextStep={this.nextStep}
                 handleChange={this.handleChange}
                 values={values}
@@ -139,6 +142,7 @@ class App extends React.Component {
             <div style={{ display: 'flex' }}>
               <Sidemenu step={step} />
               <Pricing
+                prevStep={this.prevStep}
                 nextStep={this.nextStep}
                 handleChange={this.handleChange}
                 values={values}
@@ -153,6 +157,7 @@ class App extends React.Component {
             <div style={{ display: 'flex' }}>
               <Sidemenu step={step} />
               <Inventory
+                prevStep={this.prevStep}
                 nextStep={this.nextStep}
                 handleChange={this.handleChange}
                 values={values}
@@ -167,6 +172,7 @@ class App extends React.Component {
             <div style={{ display: 'flex' }}>
               <Sidemenu step={step} />
               <Variations
+                prevStep={this.prevStep}
                 nextStep={this.nextStep}
                 handleChange={this.handleChange}
                 values={values}
@@ -181,6 +187,7 @@ class App extends React.Component {
             <div style={{ display: 'flex' }}>
               <Sidemenu step={step} />
               <Customizations
+                prevStep={this.prevStep}
                 nextStep={this.nextStep}
                 handleChange={this.handleChange}
                 values={values}
@@ -195,6 +202,7 @@ class App extends React.Component {
             <div style={{ display: 'flex' }}>
               <Sidemenu step={step} />
               <StorefrontDetails
+                prevStep={this.prevStep}
                 nextStep={this.nextStep}
                 handleChange={this.handleChange}
                 values={values}
@@ -209,6 +217,7 @@ class App extends React.Component {
             <div style={{ display: 'flex' }}>
               <Sidemenu step={step} />
               <CustomFields
+                prevStep={this.prevStep}
                 nextStep={this.nextStep}
                 handleChange={this.handleChange}
                 values={values}
@@ -223,6 +232,7 @@ class App extends React.Component {
             <div style={{ display: 'flex' }}>
               <Sidemenu step={step} />
               <RelatedProducts
+                prevStep={this.prevStep}
                 nextStep={this.nextStep}
                 handleChange={this.handleChange}
                 values={values}
@@ -237,6 +247,7 @@ class App extends React.Component {
             <div style={{ display: 'flex' }}>
               <Sidemenu step={step} />
               <DimensionsWeights
+                prevStep={this.prevStep}
                 nextStep={this.nextStep}
                 handleChange={this.handleChange}
                 values={values}
@@ -251,6 +262,7 @@ class App extends React.Component {
             <div style={{ display: 'flex' }}>
               <Sidemenu step={step} />
               <ShippingDetails
+                prevStep={this.prevStep}
                 nextStep={this.nextStep}
                 handleChange={this.handleChange}
                 values={values}
@@ -265,6 +277,7 @@ class App extends React.Component {
             <div style={{ display: 'flex' }}>
               <Sidemenu step={step} />
               <Purchasability
+                prevStep={this.prevStep}
                 nextStep={this.nextStep}
                 handleChange={this.handleChange}
                 values={values}
@@ -279,6 +292,7 @@ class App extends React.Component {
             <div style={{ display: 'flex' }}>
               <Sidemenu step={step} />
               <GiftWrapping
+                prevStep={this.prevStep}
                 nextStep={this.nextStep}
                 handleChange={this.handleChange}
                 values={values}
@@ -293,6 +307,7 @@ class App extends React.Component {
             <div style={{ display: 'flex' }}>
               <Sidemenu step={step} />
               <CustomsInformation
+                prevStep={this.prevStep}
                 nextStep={this.nextStep}
                 handleChange={this.handleChange}
                 values={values}
@@ -307,6 +322,7 @@ class App extends React.Component {
             <div style={{ display: 'flex' }}>
               <Sidemenu step={step} />
               <SEO
+                prevStep={this.prevStep}
                 nextStep={this.nextStep}
                 handleChange={this.handleChange}
                 values={values}
@@ -321,6 +337,7 @@ class App extends React.Component {
             <div style={{ display: 'flex' }}>
               <Sidemenu step={step} />
               <OpenGraphSharing
+                prevStep={this.prevStep}
                 nextStep={this.nextStep}
                 handleChange={this.handleChange}
                 values={values}
