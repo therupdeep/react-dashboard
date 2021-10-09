@@ -25,12 +25,8 @@ const Customizations = ({ prevStep, nextStep, handleChange, values }) => {
             <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
               <button
                 type='button'
-                className='btn'
-                style={{
-                  color: 'white',
-                  backgroundColor: '#ff8c00',
-                  minWidth: '10vw',
-                }}
+                className='btn btn-outline-primary'
+                style={{ minWidth: '10vw' }}
               >
                 SAVE
               </button>

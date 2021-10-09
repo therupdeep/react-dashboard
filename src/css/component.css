@@ -9,6 +9,7 @@
 .nav-link {
   color: black;
   padding: 0.25rem 10px 0.25rem 10px;
+  opacity: 0.6;
 }
 .nav-link:hover {
   color: black;
@@ -16,12 +17,14 @@
 .nav-link.active {
   color: #3469fa;
   border-left: 2px solid #3469fa;
+  opacity: 1;
 }
 .active:hover {
   color: #3469fa;
 }
 .menu-heading {
   font-size: 0.85rem;
+  opacity: 1;
 }
 .form-group {
   margin-bottom: 10px;
