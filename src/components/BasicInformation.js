@@ -26,6 +26,7 @@ const BasicInformation = ({ nextStep, toggleChange, handleChange, values }) => {
                   type='checkbox'
                   id='gridCheck'
                   defaultChecked={values.isCheckedvisibleOnStorefront}
+                  name='isCheckedvisibleOnStorefront'
                   onChange={toggleChange}
                 />
                 <label class='form-check-label' for='gridCheck'>
@@ -159,23 +160,77 @@ const BasicInformation = ({ nextStep, toggleChange, handleChange, values }) => {
                     <i class='fas fa-plus'></i> Add category
                   </div>
                 </div>
-                <div className='form-control'>
+                <div className='form-control' style={{ paddingLeft: '20px' }}>
                   <div class='form-check'>
-                    <input class='form-check-input' type='checkbox' value='' />
+                    <input
+                      class='form-check-input'
+                      type='checkbox'
+                      name='ShopAll'
+                      defaultChecked={values.categories.ShopAll}
+                      onChange={toggleChange}
+                    />
                     <label class='form-check-label' for='flexCheckDefault'>
-                      Default checkbox
+                      <i class='fas fa-folder'></i> Shop All
                     </label>
                   </div>
                   <div class='form-check'>
                     <input
                       class='form-check-input'
                       type='checkbox'
-                      value=''
-                      id='flexCheckChecked'
-                      checked
+                      name='Bath'
+                      defaultChecked={values.categories.Bath}
+                      onChange={toggleChange}
                     />
-                    <label class='form-check-label' for='flexCheckChecked'>
-                      Checked checkbox
+                    <label class='form-check-label' for='flexCheckDefault'>
+                      <i class='fas fa-folder'></i> Bath
+                    </label>
+                  </div>
+                  <div class='form-check'>
+                    <input
+                      class='form-check-input'
+                      type='checkbox'
+                      name='Garden'
+                      defaultChecked={values.categories.Garden}
+                      onChange={toggleChange}
+                    />
+                    <label class='form-check-label' for='flexCheckDefault'>
+                      <i class='fas fa-folder'></i> Garden
+                    </label>
+                  </div>
+                  <div class='form-check'>
+                    <input
+                      class='form-check-input'
+                      type='checkbox'
+                      name='Kitchen'
+                      defaultChecked={values.categories.Kitchen}
+                      onChange={toggleChange}
+                    />
+                    <label class='form-check-label' for='flexCheckDefault'>
+                      <i class='fas fa-folder'></i> Kitchen
+                    </label>
+                  </div>
+                  <div class='form-check'>
+                    <input
+                      class='form-check-input'
+                      type='checkbox'
+                      name='Publications'
+                      defaultChecked={values.categories.Publications}
+                      onChange={toggleChange}
+                    />
+                    <label class='form-check-label' for='flexCheckDefault'>
+                      <i class='fas fa-folder'></i> Publications
+                    </label>
+                  </div>
+                  <div class='form-check'>
+                    <input
+                      class='form-check-input'
+                      type='checkbox'
+                      name='Utility'
+                      defaultChecked={values.categories.Utility}
+                      onChange={toggleChange}
+                    />
+                    <label class='form-check-label' for='flexCheckDefault'>
+                      <i class='fas fa-folder'></i> Utility
                     </label>
                   </div>
                 </div>

@@ -32,6 +32,18 @@ class App extends React.Component {
     defaultPrice: '',
     brand: '',
     weight: 0,
+    categories: {
+      ShopAll: false,
+      Bath: false,
+      Garden: false,
+      Kitchen: false,
+      Publications: false,
+      Utility: false,
+    },
+    ManufacturerPartNumber: '',
+    ProductUPCorEAN: '',
+    GlobalTradeNumber: '',
+    BinPickingNumber: '',
   };
 
   // go back to previous step
@@ -50,10 +62,19 @@ class App extends React.Component {
   handleChange = (input) => (e) => {
     this.setState({ [input]: e.target.value });
   };
-  toggleChange = () => {
-    this.setState({
-      isCheckedvisibleOnStorefront: !this.state.isCheckedvisibleOnStorefront,
-    });
+  toggleChange = (e) => {
+    if (e.target.name === 'isCheckedvisibleOnStorefront') {
+      this.setState({
+        isCheckedvisibleOnStorefront: !this.state.isCheckedvisibleOnStorefront,
+      });
+    } else {
+      this.setState({
+        categories: {
+          ...this.state.categories,
+          [e.target.name]: e.target.checked,
+        },
+      });
+    }
   };
 
   render() {
@@ -66,6 +87,11 @@ class App extends React.Component {
       defaultPrice,
       brand,
       weight,
+      categories,
+      ManufacturerPartNumber,
+      ProductUPCorEAN,
+      GlobalTradeNumber,
+      BinPickingNumber,
     } = this.state;
     const values = {
       isCheckedvisibleOnStorefront,
@@ -75,6 +101,11 @@ class App extends React.Component {
       defaultPrice,
       brand,
       weight,
+      categories,
+      ManufacturerPartNumber,
+      ProductUPCorEAN,
+      GlobalTradeNumber,
+      BinPickingNumber,
     };
     switch (step) {
       case 1:

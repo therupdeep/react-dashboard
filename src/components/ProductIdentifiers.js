@@ -21,6 +21,60 @@ const ProductIdentifiers = ({ prevStep, nextStep, handleChange, values }) => {
         <br />
         <div>
           <form>
+            <div class='row'>
+              <div class='form-group col-md-6 col-sm-12'>
+                <label for='sku'>SKU</label>
+                <input
+                  type='text'
+                  class='form-control'
+                  placeholder='THK-1138'
+                  value={values.sku}
+                  onChange={handleChange('sku')}
+                />
+              </div>
+              <div class='form-group col-md-6 col-sm-12'>
+                <label for='ManufacturerPartNumber'>
+                  Manufacturer Part Number (MPN)
+                </label>
+                <input
+                  type='text'
+                  class='form-control'
+                  value={values.ManufacturerPartNumber}
+                  onChange={handleChange('ManufacturerPartNumber')}
+                />
+              </div>
+            </div>
+            <div class='row'>
+              <div class='form-group col-md-6 col-sm-12'>
+                <label for='ProductUPCorEAN'>Product UPC/EAN</label>
+                <input
+                  type='text'
+                  class='form-control'
+                  value={values.ProductUPCorEAN}
+                  onChange={handleChange('ProductUPCorEAN')}
+                />
+              </div>
+              <div class='form-group col-md-6 col-sm-12'>
+                <label for='GlobalTradeNumber'>Global Trade Number(GTN)</label>
+                <input
+                  type='text'
+                  class='form-control'
+                  value={values.GlobalTradeNumber}
+                  onChange={handleChange('GlobalTradeNumber')}
+                />
+              </div>
+            </div>
+            <div class='row'>
+              <div class='form-group col-md-6 col-sm-12'>
+                <label for='BinPickingNumber'>Bin Picking Number(BPN)</label>
+                <input
+                  type='text'
+                  class='form-control'
+                  value={values.BinPickingNumber}
+                  onChange={handleChange('BinPickingNumber')}
+                />
+              </div>
+            </div>
             <br />
             <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
               <button

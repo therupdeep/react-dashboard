@@ -1,5 +1,6 @@
 .tab-card {
   min-width: 75vw;
+  width: auto;
   height: auto;
   background-color: white;
   padding: 25px;
@@ -32,4 +33,7 @@
 .form-group {
   margin-top: 10px;
   margin-bottom: 10px;
+}
+.fa-folder {
+  color: #b5c4ff;
 }

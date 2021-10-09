@@ -7,7 +7,9 @@ const Sidemenu = ({ step }) => {
     else return 'nav-link';
   };
   return (
-    <div style={{ minWidth: '15vw', padding: '0px 20px 0px 20px' }}>
+    <div
+      style={{ minWidth: '10vw', width: 'auto', padding: '0px 20px 0px 20px' }}
+    >
       <nav className='nav flex-column col'>
         <div className='nav-link menu-heading' style={{ fontWeight: '600' }}>
           PRODUCT INFORMATION
