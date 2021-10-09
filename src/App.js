@@ -31,7 +31,7 @@ class App extends React.Component {
     productType: '',
     defaultPrice: '',
     brand: '',
-    weight: '',
+    weight: 0,
   };
 
   // go back to previous step
