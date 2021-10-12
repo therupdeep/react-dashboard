@@ -51,6 +51,10 @@ class App extends React.Component {
     taxCode: '',
     //Inventory
     trackInventory: false,
+    //if track inventory is true, these states are activated
+    levelofInventoryTracking: '',
+    stock: '',
+    lowStock: '',
   };
 
   // go back to previous step
@@ -77,7 +81,13 @@ class App extends React.Component {
           [e.target.name]: e.target.checked,
         },
       });
-    } else {
+    }
+    //for radios
+    else if (e.target.name === 'levelofInventoryTracking') {
+      this.setState({ [e.target.name]: e.target.value });
+    }
+    //for other checkboxes
+    else {
       this.setState({ [e.target.name]: e.target.checked });
     }
   };
@@ -100,6 +110,9 @@ class App extends React.Component {
       taxClass,
       taxCode,
       trackInventory,
+      levelofInventoryTracking,
+      stock,
+      lowStock,
     } = this.state;
     const values = {
       isCheckedvisibleOnStorefront,
@@ -117,6 +130,9 @@ class App extends React.Component {
       taxClass,
       taxCode,
       trackInventory,
+      levelofInventoryTracking,
+      stock,
+      lowStock,
     };
     switch (step) {
       case 1:
@@ -203,6 +219,7 @@ class App extends React.Component {
               <Inventory
                 prevStep={this.prevStep}
                 nextStep={this.nextStep}
+                toggleChange={this.toggleChange}
                 handleChange={this.handleChange}
                 values={values}
               />
