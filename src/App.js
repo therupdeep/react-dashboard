@@ -21,6 +21,7 @@ import SEO from './components/SEO';
 import OpenGraphSharing from './components/OpenGraphSharing';
 
 import './../src/App.css';
+import './../node_modules/font-awesome/css/font-awesome.min.css';
 
 class App extends React.Component {
   state = {
@@ -40,10 +41,16 @@ class App extends React.Component {
       Publications: false,
       Utility: false,
     },
+    //Product Identifiers States
     ManufacturerPartNumber: '',
     ProductUPCorEAN: '',
     GlobalTradeNumber: '',
     BinPickingNumber: '',
+    //Pricing States
+    taxClass: '',
+    taxCode: '',
+    //Inventory
+    trackInventory: false,
   };
 
   // go back to previous step
@@ -63,17 +70,15 @@ class App extends React.Component {
     this.setState({ [input]: e.target.value });
   };
   toggleChange = (e) => {
-    if (e.target.name === 'isCheckedvisibleOnStorefront') {
-      this.setState({
-        isCheckedvisibleOnStorefront: !this.state.isCheckedvisibleOnStorefront,
-      });
-    } else {
+    if (e.target.name in this.state.categories) {
       this.setState({
         categories: {
           ...this.state.categories,
           [e.target.name]: e.target.checked,
         },
       });
+    } else {
+      this.setState({ [e.target.name]: e.target.checked });
     }
   };
 
@@ -92,6 +97,9 @@ class App extends React.Component {
       ProductUPCorEAN,
       GlobalTradeNumber,
       BinPickingNumber,
+      taxClass,
+      taxCode,
+      trackInventory,
     } = this.state;
     const values = {
       isCheckedvisibleOnStorefront,
@@ -106,6 +114,9 @@ class App extends React.Component {
       ProductUPCorEAN,
       GlobalTradeNumber,
       BinPickingNumber,
+      taxClass,
+      taxCode,
+      trackInventory,
     };
     switch (step) {
       case 1:

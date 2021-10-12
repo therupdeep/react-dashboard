@@ -82,25 +82,16 @@ const BasicInformation = ({ nextStep, toggleChange, handleChange, values }) => {
                   Default Price <span style={{ color: 'red' }}>* </span>
                   (including tax)
                 </label>
-                <div style={{ display: 'flex' }}>
-                  <i
-                    class='fas fa-rupee-sign'
-                    style={{
-                      padding: '.375rem 0rem',
-                      fontSize: '1rem',
-                      lineHeight: '1.5',
-                      marginLeft: '0px',
-                    }}
-                  ></i>
-                  <input
-                    type='text'
-                    class='form-control'
-                    placeholder='35'
-                    value={values.defaultPrice}
-                    onChange={handleChange('defaultPrice')}
-                    style={{ fontFamily: "'Arial', Font Awesome 5 Free" }}
-                  />
-                </div>
+                <input
+                  type='text'
+                  class='form-control'
+                  placeholder='&#xF156; 35'
+                  value={values.defaultPrice}
+                  onChange={handleChange('defaultPrice')}
+                  style={{
+                    fontFamily: 'FontAwesome, PT Sans',
+                  }}
+                />
                 <div
                   style={{
                     display: 'flex',

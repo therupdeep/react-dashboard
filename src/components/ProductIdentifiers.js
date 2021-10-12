@@ -46,7 +46,9 @@ const ProductIdentifiers = ({ prevStep, nextStep, handleChange, values }) => {
             </div>
             <div class='row'>
               <div class='form-group col-md-6 col-sm-12'>
-                <label for='ProductUPCorEAN'>Product UPC/EAN</label>
+                <label for='ProductUPCorEAN'>
+                  Product UPC/EAN <i class='fas fa-question-circle'></i>
+                </label>
                 <input
                   type='text'
                   class='form-control'
