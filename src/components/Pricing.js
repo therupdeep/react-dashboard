@@ -1,7 +1,13 @@
 import React from 'react';
 import './../css/component.css';
 
-const Pricing = ({ prevStep, nextStep, handleChange, values }) => {
+const Pricing = ({
+  prevStep,
+  nextStep,
+  toggleChange,
+  handleChange,
+  values,
+}) => {
   const Continue = (e) => {
     e.preventDefault();
     nextStep();
@@ -69,6 +75,87 @@ const Pricing = ({ prevStep, nextStep, handleChange, values }) => {
                   onChange={handleChange('taxCode')}
                 />
               </div>
+            </div>
+            <div class='row'>
+              {/* conditional rendering based on checked value of showAdvancedPricing boolean value */}
+              {values.showAdvancedPricing ? (
+                <div>
+                  <div
+                    class='form-group div-link'
+                    style={{ display: 'inline' }}
+                  >
+                    <i class='fas fa-angle-down'></i>
+                    <span
+                      style={{ color: '#0d6efd' }}
+                      title='showAdvancedPricing'
+                      onClick={toggleChange}
+                    >
+                      {' '}
+                      Hide Advanced Pricing
+                    </span>
+                  </div>
+                  <div class='row'>
+                    <div class='form-group col-md-6 col-sm-12'>
+                      <label for='cost'>Cost</label>
+                      <input
+                        type='text'
+                        class='form-control'
+                        placeholder='&#xF156; 0'
+                        value={values.cost}
+                        onChange={handleChange('cost')}
+                        style={{
+                          fontFamily: 'FontAwesome, PT Sans',
+                        }}
+                      />
+                    </div>
+                    <div class='form-group col-md-6 col-sm-12'>
+                      <label for='msrp'>MSRP</label>
+                      <input
+                        type='text'
+                        class='form-control'
+                        placeholder='&#xF156; 0'
+                        value={values.msrp}
+                        onChange={handleChange('msrp')}
+                        style={{
+                          fontFamily: 'FontAwesome, PT Sans',
+                        }}
+                      />
+                    </div>
+                  </div>
+                  <div class='row'>
+                    <div class='form-group col-md-6 col-sm-12'>
+                      <label for='salePrice'>Sale Price</label>
+                      <input
+                        type='text'
+                        class='form-control'
+                        placeholder='&#xF156; 0'
+                        value={values.salePrice}
+                        onChange={handleChange('salePrice')}
+                        style={{
+                          fontFamily: 'FontAwesome, PT Sans',
+                        }}
+                      />
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                <div>
+                  <div
+                    class='form-group div-link'
+                    style={{ display: 'inline' }}
+                  >
+                    <i class='fas fa-angle-right'></i>
+                    <span
+                      style={{ color: '#0d6efd' }}
+                      title='showAdvancedPricing'
+                      onClick={toggleChange}
+                    >
+                      {' '}
+                      Show Advanced Pricing
+                    </span>
+                  </div>
+                </div>
+              )}
             </div>
             <br />
             <div style={{ display: 'flex', justifyContent: 'flex-end' }}>

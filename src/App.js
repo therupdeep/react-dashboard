@@ -49,6 +49,11 @@ class App extends React.Component {
     //Pricing States
     taxClass: '',
     taxCode: '',
+    showAdvancedPricing: false,
+    //if showAdvancedPricing = true
+    cost: '',
+    msrp: '',
+    salePrice: '',
     //Inventory
     trackInventory: false,
     //if track inventory is true, these states are activated
@@ -78,7 +83,7 @@ class App extends React.Component {
       this.setState({
         categories: {
           ...this.state.categories,
-          [e.target.name]: e.target.checked,
+          [e.target.name]: !this.state.categories[e.target.name],
         },
       });
     }
@@ -86,53 +91,20 @@ class App extends React.Component {
     else if (e.target.name === 'levelofInventoryTracking') {
       this.setState({ [e.target.name]: e.target.value });
     }
+    //for the show/hide advanced pricing button in pricing.js
+    else if (e.target.title === 'showAdvancedPricing') {
+      this.setState({ [e.target.title]: !this.state[e.target.title] });
+    }
     //for other checkboxes
     else {
-      this.setState({ [e.target.name]: e.target.checked });
+      this.setState({ [e.target.name]: !this.state[e.target.name] });
     }
   };
 
   render() {
     const step = this.state.step;
-    const {
-      isCheckedvisibleOnStorefront,
-      productName,
-      sku,
-      productType,
-      defaultPrice,
-      brand,
-      weight,
-      categories,
-      ManufacturerPartNumber,
-      ProductUPCorEAN,
-      GlobalTradeNumber,
-      BinPickingNumber,
-      taxClass,
-      taxCode,
-      trackInventory,
-      levelofInventoryTracking,
-      stock,
-      lowStock,
-    } = this.state;
     const values = {
-      isCheckedvisibleOnStorefront,
-      productName,
-      sku,
-      productType,
-      defaultPrice,
-      brand,
-      weight,
-      categories,
-      ManufacturerPartNumber,
-      ProductUPCorEAN,
-      GlobalTradeNumber,
-      BinPickingNumber,
-      taxClass,
-      taxCode,
-      trackInventory,
-      levelofInventoryTracking,
-      stock,
-      lowStock,
+      ...this.state,
     };
     switch (step) {
       case 1:
@@ -204,6 +176,7 @@ class App extends React.Component {
               <Pricing
                 prevStep={this.prevStep}
                 nextStep={this.nextStep}
+                toggleChange={this.toggleChange}
                 handleChange={this.handleChange}
                 values={values}
               />
