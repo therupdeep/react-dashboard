@@ -15,7 +15,7 @@ const BasicInformation = ({ nextStep, toggleChange, handleChange, values }) => {
         <div>Information to help define a product</div>
       </div>
       <div className='tab-card'>
-        <h5 style={{ fontWeight: '600', color: 'black' }}>Basic Information</h5>
+        <h5 style={{ fontWeight: '600' }}>Basic Information</h5>
         <br />
         <div>
           <form>

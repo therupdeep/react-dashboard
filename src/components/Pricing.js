@@ -140,15 +140,7 @@ const Pricing = ({
                   </div>
                   {/* Bulk pricing section */}
                   <div>
-                    <h5
-                      style={{
-                        fontWeight: '600',
-                        fontSize: '1.15rem',
-                        margin: '1rem 0',
-                      }}
-                    >
-                      Bulk Pricing
-                    </h5>
+                    <h5 className='sub-heading'>Bulk Pricing</h5>
                     <span>
                       Create bulk pricing rules to offer price discounts based
                       on quantity breaks
