@@ -1,3 +1,8 @@
+// App.js is the starting point of the component hierarchy. Depending upon the step value
+// different components are rendered. And the step values are incremented/decremented on
+// clicking next/previous buttons. Also the nextStep,prevStep,handleChange,toggleChange,
+// state values are passed as props to the components which are rendered
+
 import React from 'react';
 import Sidemenu from './components/SideMenu';
 import Navbar from './components/Navbar';
@@ -32,7 +37,7 @@ class App extends React.Component {
     productType: '',
     defaultPrice: '',
     brand: '',
-    weight: 0,
+    weight: '',
     categories: {
       ShopAll: false,
       Bath: false,
