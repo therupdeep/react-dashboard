@@ -14,10 +14,49 @@ const Variations = ({ prevStep, nextStep, handleChange, values }) => {
     <div>
       <div style={{ textAlign: 'center' }}>
         <h5 style={{ fontWeight: '600' }}>Product Options</h5>
-        <div></div>
+        <div>Create product variations and customizations</div>
       </div>
       <div className='tab-card'>
         <h5 style={{ fontWeight: '600' }}>Variations</h5>
+        <span>
+          Add variant options like size and color to create variants for this
+          products
+        </span>
+        {/* Variant Options section */}
+        <div>
+          <h5
+            style={{
+              fontWeight: '600',
+              fontSize: '1.15rem',
+              margin: '1.5rem 0',
+            }}
+          >
+            Variant Options
+          </h5>
+          <div style={{ textAlign: 'center' }}>
+            <div style={{ padding: '1rem 0' }}>
+              No Option has been added yet
+            </div>
+            <button type='button' className='btn btn-outline-primary'>
+              + Add Variant Option
+            </button>
+          </div>
+        </div>
+        {/* Variants section */}
+        <div>
+          <h5
+            style={{
+              fontWeight: '600',
+              fontSize: '1.15rem',
+              margin: '1.5rem 0',
+            }}
+          >
+            Variants
+          </h5>
+          <div className='variant-section'>
+            Variants will be created after creating Options
+          </div>
+        </div>
         <br />
         <div>
           <form>
