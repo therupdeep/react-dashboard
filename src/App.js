@@ -31,6 +31,7 @@ import './../node_modules/font-awesome/css/font-awesome.min.css';
 class App extends React.Component {
   state = {
     step: 1,
+    // Basic Information States
     isCheckedvisibleOnStorefront: false,
     productName: '',
     sku: '',
@@ -46,22 +47,23 @@ class App extends React.Component {
       Publications: false,
       Utility: false,
     },
-    //Product Identifiers States
+    // --> Product Identifiers Only States
     ManufacturerPartNumber: '',
     ProductUPCorEAN: '',
     GlobalTradeNumber: '',
     BinPickingNumber: '',
-    //Pricing States
+    // --> Pricing Only States
     taxClass: '',
     taxCode: '',
     showAdvancedPricing: false,
-    //if showAdvancedPricing = true
+    // if showAdvancedPricing = true under Pricing states
     cost: '',
     msrp: '',
     salePrice: '',
-    //Inventory
+    bulkPricingDiscountType: '',
+    // --> Inventory states
     trackInventory: false,
-    //if track inventory is true, these states are activated
+    // if track inventory is true, these states are activated under Inventory states
     levelofInventoryTracking: '',
     stock: '',
     lowStock: '',

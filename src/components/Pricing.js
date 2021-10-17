@@ -76,7 +76,7 @@ const Pricing = ({
                 />
               </div>
             </div>
-            <div class='row'>
+            <div className='row'>
               {/* conditional rendering based on checked value of showAdvancedPricing boolean value */}
               {values.showAdvancedPricing ? (
                 <div>
@@ -94,6 +94,7 @@ const Pricing = ({
                       Hide Advanced Pricing
                     </span>
                   </div>
+                  {/* Advanced Options section */}
                   <div class='row'>
                     <div class='form-group col-md-6 col-sm-12'>
                       <label for='cost'>Cost</label>
@@ -135,6 +136,48 @@ const Pricing = ({
                           fontFamily: 'FontAwesome, PT Sans',
                         }}
                       />
+                    </div>
+                  </div>
+                  {/* Bulk pricing section */}
+                  <div>
+                    <h5
+                      style={{
+                        fontWeight: '600',
+                        fontSize: '1.15rem',
+                        margin: '1rem 0',
+                      }}
+                    >
+                      Bulk Pricing
+                    </h5>
+                    <span>
+                      Create bulk pricing rules to offer price discounts based
+                      on quantity breaks
+                    </span>
+                    <div className='row'>
+                      <div class='form-group col-md-6 col-sm-12'>
+                        <label for='bulkPricingDiscountType'>
+                          Discount Type
+                        </label>
+                        <select
+                          class='form-control'
+                          onChange={handleChange('bulkPricingDiscountType')}
+                        >
+                          <option
+                            selected={
+                              values.bulkPricingDiscountType === '% Discount'
+                            }
+                            value='% Discount'
+                          >
+                            % Discount
+                          </option>
+                          <option
+                            selected={values.bulkPricingDiscountType === '...'}
+                            value='...'
+                          >
+                            ...
+                          </option>
+                        </select>
+                      </div>
                     </div>
                   </div>
                 </div>
