@@ -28,6 +28,9 @@ import OpenGraphSharing from './components/OpenGraphSharing';
 import './../src/App.css';
 import './../node_modules/font-awesome/css/font-awesome.min.css';
 
+import { EditorState, convertToRaw } from 'draft-js';
+import draftToHtml from 'draftjs-to-html';
+
 class App extends React.Component {
   state = {
     step: 1,
@@ -47,6 +50,9 @@ class App extends React.Component {
       Publications: false,
       Utility: false,
     },
+    // --> Description states
+    descEditorState: EditorState.createEmpty(),
+    descEditorContent: '',
     // --> Product Identifiers Only States
     ManufacturerPartNumber: '',
     ProductUPCorEAN: '',
@@ -61,13 +67,13 @@ class App extends React.Component {
     msrp: '',
     salePrice: '',
     bulkPricingDiscountType: '% Discount',
+    discountTiers: [{}],
     // --> Inventory states
     trackInventory: false,
     // if track inventory is true, these states are activated under Inventory states
     levelofInventoryTracking: '',
     stock: '',
     lowStock: '',
-    discountTiers: [{}],
   };
 
   // go back to previous step
@@ -81,7 +87,16 @@ class App extends React.Component {
     const { step } = this.state;
     this.setState({ step: step + 1 });
   };
-
+  onEditorStateChange = (descEditorState) => {
+    this.setState({
+      descEditorState,
+    });
+    this.setState({
+      descEditorContent: draftToHtml(
+        convertToRaw(this.state.descEditorState.getCurrentContent())
+      ),
+    });
+  };
   // Handle fields change
   handleChange = (input) => (e) => {
     this.setState({ [input]: e.target.value });
@@ -106,7 +121,6 @@ class App extends React.Component {
     this.setState({
       discountTiers,
     });
-    console.log(this.state.discountTiers);
   };
   handleAddRow = (e) => {
     e.preventDefault();
@@ -118,7 +132,6 @@ class App extends React.Component {
     this.setState({
       discountTiers: [...this.state.discountTiers, item],
     });
-    console.log(this.state.discountTiers);
   };
   // handleRemoveRow = (e) => {
   //   e.preventDefault();
@@ -161,7 +174,6 @@ class App extends React.Component {
     const values = {
       ...this.state,
     };
-    console.log(this.state);
     switch (step) {
       case 1:
         return (
@@ -187,6 +199,7 @@ class App extends React.Component {
               <Description
                 prevStep={this.prevStep}
                 nextStep={this.nextStep}
+                onEditorStateChange={this.onEditorStateChange}
                 handleChange={this.handleChange}
                 values={values}
               />
