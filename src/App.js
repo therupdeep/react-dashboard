@@ -60,13 +60,14 @@ class App extends React.Component {
     cost: '',
     msrp: '',
     salePrice: '',
-    bulkPricingDiscountType: '',
+    bulkPricingDiscountType: '% Discount',
     // --> Inventory states
     trackInventory: false,
     // if track inventory is true, these states are activated under Inventory states
     levelofInventoryTracking: '',
     stock: '',
     lowStock: '',
+    discountTiers: [{}],
   };
 
   // go back to previous step
@@ -84,6 +85,53 @@ class App extends React.Component {
   // Handle fields change
   handleChange = (input) => (e) => {
     this.setState({ [input]: e.target.value });
+  };
+  handleChangeTable = (idx) => (e) => {
+    const { name, value } = e.target;
+    console.log(name);
+    console.log(value);
+    const discountTiers = [...this.state.discountTiers];
+    switch (name) {
+      case 'minQuantity':
+        discountTiers[idx].minQuantity = value;
+        break;
+      case 'discount':
+        discountTiers[idx].discount = value;
+        break;
+      case 'unitPrice':
+        discountTiers[idx].unitPrice = value;
+        break;
+      default:
+    }
+    this.setState({
+      discountTiers,
+    });
+    console.log(this.state.discountTiers);
+  };
+  handleAddRow = (e) => {
+    e.preventDefault();
+    const item = {
+      minQuantity: '',
+      discount: '',
+      unitPrice: '',
+    };
+    this.setState({
+      discountTiers: [...this.state.discountTiers, item],
+    });
+    console.log(this.state.discountTiers);
+  };
+  // handleRemoveRow = (e) => {
+  //   e.preventDefault();
+  //   this.setState({
+  //     discountTiers: this.state.discountTiers.slice(0, -1),
+  //   });
+  //   console.log(this.state.discountTiers);
+  // };
+  handleRemoveSpecificRow = (idx) => (e) => {
+    e.preventDefault();
+    const discountTiers = [...this.state.discountTiers];
+    discountTiers.splice(idx, 1);
+    this.setState({ discountTiers });
   };
   toggleChange = (e) => {
     if (e.target.name in this.state.categories) {
@@ -113,6 +161,7 @@ class App extends React.Component {
     const values = {
       ...this.state,
     };
+    console.log(this.state);
     switch (step) {
       case 1:
         return (
@@ -183,6 +232,10 @@ class App extends React.Component {
               <Pricing
                 prevStep={this.prevStep}
                 nextStep={this.nextStep}
+                handleChangeTable={this.handleChangeTable}
+                handleAddRow={this.handleAddRow}
+                handleRemoveRow={this.handleRemoveRow}
+                handleRemoveSpecificRow={this.handleRemoveSpecificRow}
                 toggleChange={this.toggleChange}
                 handleChange={this.handleChange}
                 values={values}
@@ -389,6 +442,46 @@ class App extends React.Component {
 
       default:
     }
+    // return (
+    //   <div className='homepage'>
+    //     <Navbar />
+    //     <div style={{ display: 'flex' }}>
+    //       <Sidemenu step={step} />
+    //       <div>
+    //         <BasicInformation
+    //           nextStep={this.nextStep}
+    //           toggleChange={this.toggleChange}
+    //           handleChange={this.handleChange}
+    //           values={values}
+    //         />
+    //         <Description
+    //           prevStep={this.prevStep}
+    //           nextStep={this.nextStep}
+    //           handleChange={this.handleChange}
+    //           values={values}
+    //         />
+    //         <Description
+    //           prevStep={this.prevStep}
+    //           nextStep={this.nextStep}
+    //           handleChange={this.handleChange}
+    //           values={values}
+    //         />
+    //         <Description
+    //           prevStep={this.prevStep}
+    //           nextStep={this.nextStep}
+    //           handleChange={this.handleChange}
+    //           values={values}
+    //         />
+    //         <Description
+    //           prevStep={this.prevStep}
+    //           nextStep={this.nextStep}
+    //           handleChange={this.handleChange}
+    //           values={values}
+    //         />
+    //       </div>
+    //     </div>
+    //   </div>
+    // );
   }
 }
 

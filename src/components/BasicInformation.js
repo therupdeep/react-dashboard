@@ -91,6 +91,7 @@ const BasicInformation = ({ nextStep, toggleChange, handleChange, values }) => {
                   style={{
                     fontFamily: 'FontAwesome, PT Sans',
                   }}
+                  required
                 />
                 <div
                   style={{
@@ -124,6 +125,7 @@ const BasicInformation = ({ nextStep, toggleChange, handleChange, values }) => {
                     placeholder='0'
                     value={values.weight}
                     onChange={handleChange('weight')}
+                    required
                   />
                   <span
                     style={{

@@ -4,6 +4,9 @@ import './../css/component.css';
 const Pricing = ({
   prevStep,
   nextStep,
+  handleChangeTable,
+  handleAddRow,
+  handleRemoveSpecificRow,
   toggleChange,
   handleChange,
   values,
@@ -171,6 +174,75 @@ const Pricing = ({
                         </select>
                       </div>
                     </div>
+                    {values.bulkPricingDiscountType === '% Discount' ? (
+                      <div>
+                        <table
+                          class='table table-bordered'
+                          style={{ marginTop: '1rem' }}
+                        >
+                          <thead>
+                            <tr class='table-light'>
+                              <th className='text-end'> Min Quantity </th>
+                              <th className='text-end'> % Discount </th>
+                              <th className='text-end'> Unit Price </th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {values.discountTiers.map((item, idx) => (
+                              <tr id='addr0' key={idx}>
+                                <td>
+                                  <input
+                                    type='text'
+                                    name='minQuantity'
+                                    value={
+                                      values.discountTiers[idx].minQuantity
+                                    }
+                                    onChange={handleChangeTable(idx)}
+                                    className='form-control text-end'
+                                  />
+                                </td>
+                                <td>
+                                  <input
+                                    type='text'
+                                    name='discount'
+                                    placeholder='0.00%'
+                                    value={values.discountTiers[idx].discount}
+                                    onChange={handleChangeTable(idx)}
+                                    className='form-control text-end'
+                                  />
+                                </td>
+                                <td>
+                                  <input
+                                    type='text'
+                                    name='unitPrice'
+                                    value={values.discountTiers[idx].unitPrice}
+                                    onChange={handleChangeTable(idx)}
+                                    className='form-control text-end'
+                                  />
+                                </td>
+                                <td>
+                                  <button
+                                    className='btn'
+                                    onClick={handleRemoveSpecificRow(idx)}
+                                  >
+                                    <i class='fas fa-trash'></i>
+                                  </button>
+                                </td>
+                              </tr>
+                            ))}
+                          </tbody>
+                        </table>
+                        <button
+                          onClick={handleAddRow}
+                          style={{ color: '#0d6efd' }}
+                          className='btn btn-default pull-left'
+                        >
+                          + Add tier
+                        </button>
+                      </div>
+                    ) : (
+                      <div></div>
+                    )}
                   </div>
                 </div>
               ) : (
