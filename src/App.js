@@ -172,6 +172,34 @@ class App extends React.Component {
     const values = {
       ...this.state,
     };
+    // return (
+    //   <div className='homepage'>
+    //     <div style={{ display: 'flex' }}>
+    //       <Sidemenu step={step} />
+    //       <div style={{ marginLeft: '15vw', marginTop: '14vh' }}>
+    //         <BasicInformation
+    //           nextStep={this.nextStep}
+    //           toggleChange={this.toggleChange}
+    //           handleChange={this.handleChange}
+    //           values={values}
+    //         />
+    //         <Description
+    //           prevStep={this.prevStep}
+    //           nextStep={this.nextStep}
+    //           onEditorStateChange={this.onEditorStateChange}
+    //           handleChange={this.handleChange}
+    //           values={values}
+    //         />
+    //         <ImagesVideos
+    //           prevStep={this.prevStep}
+    //           nextStep={this.nextStep}
+    //           handleChange={this.handleChange}
+    //           values={values}
+    //         />
+    //       </div>
+    //     </div>
+    //   </div>
+    // );
     switch (step) {
       case 1:
         return (

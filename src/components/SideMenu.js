@@ -8,7 +8,14 @@ const Sidemenu = ({ step }) => {
   };
   return (
     <div
-      style={{ minWidth: '10vw', width: 'auto', padding: '0px 20px 0px 20px' }}
+      style={{
+        width: 'auto',
+        padding: '0px 20px 0px 20px',
+        // position: 'fixed',
+        // top: '0',
+        // left: '0',
+        // zIndex: '1',
+      }}
     >
       <nav className='nav flex-column col'>
         <div className='nav-link menu-heading' style={{ fontWeight: '600' }}>
