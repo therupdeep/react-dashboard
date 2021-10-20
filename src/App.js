@@ -103,8 +103,6 @@ class App extends React.Component {
   };
   handleChangeTable = (idx) => (e) => {
     const { name, value } = e.target;
-    console.log(name);
-    console.log(value);
     const discountTiers = [...this.state.discountTiers];
     switch (name) {
       case 'minQuantity':
