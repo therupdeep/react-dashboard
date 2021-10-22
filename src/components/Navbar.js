@@ -5,9 +5,8 @@ const Navbar = () => {
     <div
       style={{
         padding: '0px 20px 0px 20px',
-        backgroundColor: 'rgba(255,255,255,0.6)',
+        opacity: '0.6',
       }}
-      className='fixed-top'
     >
       <div style={{ display: 'flex' }}>
         <i class='fas fa-arrow-left' style={{ lineHeight: '1.5' }}></i>
