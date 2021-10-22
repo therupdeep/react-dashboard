@@ -74,6 +74,8 @@ class App extends React.Component {
     levelofInventoryTracking: '',
     stock: '',
     lowStock: '',
+    // --> Variant states
+    variantOptions: [{}],
   };
 
   // go back to previous step
@@ -103,22 +105,43 @@ class App extends React.Component {
   };
   handleChangeTable = (idx) => (e) => {
     const { name, value } = e.target;
-    const discountTiers = [...this.state.discountTiers];
-    switch (name) {
-      case 'minQuantity':
-        discountTiers[idx].minQuantity = value;
-        break;
-      case 'discount':
-        discountTiers[idx].discount = value;
-        break;
-      case 'unitPrice':
-        discountTiers[idx].unitPrice = value;
-        break;
-      default:
+    if (this.state.step === 5) {
+      const discountTiers = [...this.state.discountTiers];
+      switch (name) {
+        case 'minQuantity':
+          discountTiers[idx].minQuantity = value;
+          break;
+        case 'discount':
+          discountTiers[idx].discount = value;
+          break;
+        case 'unitPrice':
+          discountTiers[idx].unitPrice = value;
+          break;
+        default:
+      }
+      this.setState({
+        discountTiers,
+      });
     }
-    this.setState({
-      discountTiers,
-    });
+    // else if (this.state.step === 7) {
+    //   const variantOptions = [...this.state.variantOptions];
+    //   switch (name) {
+    //     case 'name':
+    //       variantOptions[idx].minQuantity = value;
+    //       break;
+    //     case 'type':
+    //       variantOptions[idx].discount = value;
+    //       break;
+    //     case 'values':
+    //       variantOptions[idx].unitPrice = value;
+    //       break;
+    //     default:
+    //   }
+    //   this.setState({
+    //     variantOptions,
+    //   });
+    // }
+    console.log(this.state);
   };
   handleAddRow = (e) => {
     e.preventDefault();

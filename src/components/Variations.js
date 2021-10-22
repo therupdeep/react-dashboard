@@ -88,7 +88,7 @@ const Variations = ({ prevStep, nextStep, handleChange, values }) => {
         onHide={() => setShow(false)}
         style={{ color: 'rgba(0, 0, 0, 0.6)' }}
       >
-        <Modal.Header closeButton>
+        <Modal.Header>
           <Modal.Title>
             <div>
               <div style={{ display: 'flex', paddingLeft: '1rem' }}>
