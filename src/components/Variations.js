@@ -3,7 +3,17 @@ import './../css/component.css';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 
-const Variations = ({ prevStep, nextStep, handleChange, values }) => {
+const Variations = ({
+  prevStep,
+  nextStep,
+  handleAddValue,
+  handleChangeVariantValue,
+  handleChangeTable,
+  handleAddRow,
+  handleRemoveSpecificRow,
+  handleChange,
+  values,
+}) => {
   const Continue = (e) => {
     e.preventDefault();
     nextStep();
@@ -40,9 +50,6 @@ const Variations = ({ prevStep, nextStep, handleChange, values }) => {
             <Button variant='outline-primary' onClick={() => handleShow(true)}>
               <i class='fas fa-plus'></i>&nbsp; Add Variant Option
             </Button>
-            {/* <button type='button' className='btn btn-outline-primary'>
-              <i class='fas fa-plus'></i>&nbsp; Add Variant Option
-            </button> */}
           </div>
         </div>
         {/* Variants section */}
@@ -101,7 +108,8 @@ const Variations = ({ prevStep, nextStep, handleChange, values }) => {
                 </h5>
                 &nbsp;
                 <span style={{ lineHeight: '1.7' }}>
-                  (0 options, 0 variants)
+                  ({values.variantOptions.length} options,{' '}
+                  {values.variantOptions.length} variants)
                 </span>
               </div>
             </div>
@@ -115,19 +123,164 @@ const Variations = ({ prevStep, nextStep, handleChange, values }) => {
                 that can be used to track inventory. Assign attributes such as
                 Image, Default Price, and Weight on the Variant level.
               </div>
-              <div style={{ paddingTop: '2rem', display: 'flex' }}>
-                <div className='bg-white'>
-                  <button type='button' className='btn btn-outline-primary'>
-                    <i class='fas fa-plus'></i>&nbsp; Add Variant Option
-                  </button>
+              {/* Conditional rendering based on whether the add variant option button has been pressed or not */}
+              {values.variantOptions.length > 0 ? (
+                <div>
+                  <table
+                    class='table table-borderless'
+                    style={{ marginTop: '1rem' }}
+                  >
+                    <thead>
+                      <tr class='table-light'>
+                        <th className='text-start'> Name </th>
+                        <th className='text-start'> Type </th>
+                        <th className='text-start'> Values </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {values.variantOptions.map((item, idx) => (
+                        <tr id='addr0' key={idx}>
+                          <td>
+                            <input
+                              type='text'
+                              name='name'
+                              placeholder='e.g. Color, Size, etc.'
+                              value={values.variantOptions[idx].name}
+                              onChange={handleChangeTable(idx)}
+                              className='form-control'
+                            />
+                          </td>
+                          <td>
+                            <select
+                              class='form-control'
+                              onChange={handleChangeTable(idx)}
+                              name='type'
+                            >
+                              <option
+                                selected={
+                                  values.variantOptions[idx].type ===
+                                  'Radio Buttons'
+                                }
+                                value='Radio Buttons'
+                              >
+                                Radio Buttons
+                              </option>
+                              <option
+                                selected={
+                                  values.variantOptions[idx].type === '...'
+                                }
+                                value='...'
+                              >
+                                ...
+                              </option>
+                            </select>
+                          </td>
+                          <td>
+                            {/* Mapping Number of values in variantOptions */}
+                            {values.variantOptions[idx].variantValues.map(
+                              (unit, index) => (
+                                <td>
+                                  <input
+                                    type='text'
+                                    name='variantValues'
+                                    value={
+                                      values.variantOptions[idx].variantValues[
+                                        index
+                                      ]
+                                    }
+                                    placeholder='Enter value here'
+                                    onChange={handleChangeVariantValue(
+                                      idx,
+                                      index
+                                    )}
+                                    className='form-control'
+                                    key={index}
+                                  />
+                                </td>
+                              )
+                            )}
+                            <div>
+                              <button
+                                type='button'
+                                onClick={handleAddValue(idx)}
+                                className='btn'
+                                style={{ color: '#0d6efd' }}
+                              >
+                                + Add Another Value
+                              </button>
+                            </div>
+                          </td>
+                          <td>
+                            <div className='form-check'>
+                              <input
+                                class='form-check-input'
+                                type='radio'
+                                name='isDefault'
+                                id='default'
+                                value='default'
+                                checked={
+                                  values.variantOptions[idx].isDefault ===
+                                  'default'
+                                }
+                                onChange={handleChangeTable(idx)}
+                              />
+                              <label className='form-check-label' for='default'>
+                                Default
+                              </label>
+                            </div>
+                          </td>
+                          <td>
+                            <button
+                              className='btn'
+                              onClick={handleRemoveSpecificRow(idx)}
+                            >
+                              <i class='fas fa-trash'></i>
+                            </button>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                  <hr style={{ width: '100%' }} />
+                  <div style={{ paddingTop: '2rem', display: 'flex' }}>
+                    <div className='bg-white'>
+                      <button
+                        type='button'
+                        onClick={handleAddRow}
+                        className='btn btn-outline-primary'
+                      >
+                        <i class='fas fa-plus'></i>&nbsp; Add Variant Option
+                      </button>
+                    </div>
+                    &nbsp;&nbsp;&nbsp;
+                    <div className='bg-white'>
+                      <button type='button' className='btn btn-outline-primary'>
+                        <i class='fas fa-plus'></i>&nbsp; Add Shared Variant
+                        Option
+                      </button>
+                    </div>
+                  </div>
                 </div>
-                &nbsp;&nbsp;&nbsp;
-                <div className='bg-white'>
-                  <button type='button' className='btn btn-outline-primary'>
-                    <i class='fas fa-plus'></i>&nbsp; Add Shared Variant Option
-                  </button>
+              ) : (
+                <div style={{ paddingTop: '2rem', display: 'flex' }}>
+                  <div className='bg-white'>
+                    <button
+                      type='button'
+                      onClick={handleAddRow}
+                      className='btn btn-outline-primary'
+                    >
+                      <i class='fas fa-plus'></i>&nbsp; Add Variant Option
+                    </button>
+                  </div>
+                  &nbsp;&nbsp;&nbsp;
+                  <div className='bg-white'>
+                    <button type='button' className='btn btn-outline-primary'>
+                      <i class='fas fa-plus'></i>&nbsp; Add Shared Variant
+                      Option
+                    </button>
+                  </div>
                 </div>
-              </div>
+              )}
             </div>
             <div className='bg-white' style={{ paddingBottom: '1rem' }}>
               <hr style={{ marginTop: '0', marginBottom: '1rem' }} />

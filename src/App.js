@@ -75,7 +75,7 @@ class App extends React.Component {
     stock: '',
     lowStock: '',
     // --> Variant states
-    variantOptions: [{}],
+    variantOptions: [],
   };
 
   // go back to previous step
@@ -103,6 +103,18 @@ class App extends React.Component {
   handleChange = (input) => (e) => {
     this.setState({ [input]: e.target.value });
   };
+  handleChangeVariantValue = (idx, index) => (e) => {
+    const { name, value } = e.target;
+    if (name === 'variantValues') {
+      const variantOptions = [...this.state.variantOptions];
+      variantOptions[idx].variantValues[index] = value;
+      this.setState({
+        variantOptions,
+      });
+      console.log(this.state);
+    }
+  };
+
   handleChangeTable = (idx) => (e) => {
     const { name, value } = e.target;
     if (this.state.step === 5) {
@@ -122,37 +134,62 @@ class App extends React.Component {
       this.setState({
         discountTiers,
       });
+    } else if (this.state.step === 7) {
+      const variantOptions = [...this.state.variantOptions];
+      switch (name) {
+        case 'name':
+          variantOptions[idx].name = value;
+          break;
+        case 'type':
+          variantOptions[idx].type = value;
+          break;
+        case 'isDefault':
+          variantOptions[idx].isDefault = value;
+          break;
+        default:
+      }
+      this.setState({
+        variantOptions,
+      });
     }
-    // else if (this.state.step === 7) {
-    //   const variantOptions = [...this.state.variantOptions];
-    //   switch (name) {
-    //     case 'name':
-    //       variantOptions[idx].minQuantity = value;
-    //       break;
-    //     case 'type':
-    //       variantOptions[idx].discount = value;
-    //       break;
-    //     case 'values':
-    //       variantOptions[idx].unitPrice = value;
-    //       break;
-    //     default:
-    //   }
-    //   this.setState({
-    //     variantOptions,
-    //   });
-    // }
     console.log(this.state);
   };
   handleAddRow = (e) => {
     e.preventDefault();
-    const item = {
-      minQuantity: '',
-      discount: '',
-      unitPrice: '',
-    };
+    if (this.state.step === 5) {
+      const item = {
+        minQuantity: '',
+        discount: '',
+        unitPrice: '',
+      };
+      this.setState({
+        discountTiers: [...this.state.discountTiers, item],
+      });
+    } else if (this.state.step === 7) {
+      const item = {
+        name: '',
+        type: 'Radio Buttons',
+        variantValues: [''],
+        isDefault: '',
+      };
+      this.setState({
+        variantOptions: [...this.state.variantOptions, item],
+      });
+      console.log(this.state);
+    }
+  };
+  handleAddValue = (idx) => (e) => {
+    e.preventDefault();
+    console.log('calling addvalue');
+    const variantOptions = [...this.state.variantOptions];
+    variantOptions[idx].variantValues = [
+      ...variantOptions[idx].variantValues,
+      '',
+    ];
     this.setState({
-      discountTiers: [...this.state.discountTiers, item],
+      variantOptions,
     });
+    console.log(variantOptions[idx].variantValues);
   };
   // handleRemoveRow = (e) => {
   //   e.preventDefault();
@@ -163,9 +200,15 @@ class App extends React.Component {
   // };
   handleRemoveSpecificRow = (idx) => (e) => {
     e.preventDefault();
-    const discountTiers = [...this.state.discountTiers];
-    discountTiers.splice(idx, 1);
-    this.setState({ discountTiers });
+    if (this.state.step === 5) {
+      const discountTiers = [...this.state.discountTiers];
+      discountTiers.splice(idx, 1);
+      this.setState({ discountTiers });
+    } else if (this.state.step === 7) {
+      const variantOptions = [...this.state.variantOptions];
+      variantOptions.splice(idx, 1);
+      this.setState({ variantOptions });
+    }
   };
   toggleChange = (e) => {
     if (e.target.name in this.state.categories) {
@@ -294,9 +337,9 @@ class App extends React.Component {
               <Pricing
                 prevStep={this.prevStep}
                 nextStep={this.nextStep}
+                handleAddValue={this.handleAddValue}
                 handleChangeTable={this.handleChangeTable}
                 handleAddRow={this.handleAddRow}
-                handleRemoveRow={this.handleRemoveRow}
                 handleRemoveSpecificRow={this.handleRemoveSpecificRow}
                 toggleChange={this.toggleChange}
                 handleChange={this.handleChange}
@@ -330,6 +373,11 @@ class App extends React.Component {
               <Variations
                 prevStep={this.prevStep}
                 nextStep={this.nextStep}
+                handleAddValue={this.handleAddValue}
+                handleChangeVariantValue={this.handleChangeVariantValue}
+                handleChangeTable={this.handleChangeTable}
+                handleAddRow={this.handleAddRow}
+                handleRemoveSpecificRow={this.handleRemoveSpecificRow}
                 handleChange={this.handleChange}
                 values={values}
               />
