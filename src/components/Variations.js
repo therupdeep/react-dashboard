@@ -6,6 +6,7 @@ import Modal from 'react-bootstrap/Modal';
 const Variations = ({
   prevStep,
   nextStep,
+  toggleChange,
   handleAddValue,
   handleChangeVariantValue,
   handleChangeTable,
@@ -22,12 +23,17 @@ const Variations = ({
     e.preventDefault();
     prevStep();
   };
+  // Fullscreen modal on clicking add variant on the variations page
   const [fullscreen, setFullscreen] = useState(true);
   const [show, setShow] = useState(false);
   function handleShow(breakpoint) {
     setFullscreen(breakpoint);
     setShow(true);
   }
+
+  // Vertically centered modal on clicking add shared modal button
+  const [sharedModalShow, setSharedModalShow] = useState(false);
+
   return (
     <div>
       <div style={{ textAlign: 'center' }}>
@@ -274,14 +280,115 @@ const Variations = ({
                   </div>
                   &nbsp;&nbsp;&nbsp;
                   <div className='bg-white'>
-                    <button type='button' className='btn btn-outline-primary'>
+                    <Button
+                      variant='outline-primary'
+                      onClick={() => setSharedModalShow(true)}
+                    >
                       <i class='fas fa-plus'></i>&nbsp; Add Shared Variant
-                      Option
-                    </button>
+                    </Button>
                   </div>
                 </div>
               )}
             </div>
+            {/* Add shared variant modal */}
+            <Modal
+              show={sharedModalShow}
+              onHide={() => setSharedModalShow(false)}
+              size='lg'
+              aria-labelledby='contained-modal-title-vcenter'
+              centered
+            >
+              <Modal.Header>
+                <Modal.Title id='contained-modal-title-vcenter'>
+                  Add Shared Option
+                </Modal.Title>
+              </Modal.Header>
+              <Modal.Body>
+                <table class='table table-borderless'>
+                  <thead>
+                    <tr>
+                      <div class='form-check'>
+                        <input
+                          class='form-check-input'
+                          type='checkbox'
+                          id='gridCheck'
+                          defaultChecked={values.setSelectAll}
+                          name='setSelectAll'
+                          onChange={toggleChange}
+                          style={{ margin: '0.25em 0.25em 0 0' }}
+                        />
+                        <label class='form-check-label' for='gridCheck'>
+                          {values.sharedOptions.length} variant Options
+                        </label>
+                      </div>
+                    </tr>
+                    <tr class='table-light'>
+                      <th className='text-end' style={{ width: '20%' }}>
+                        Option Name
+                      </th>
+                      <th className='text-start' style={{ width: '20%' }}>
+                        Display Label
+                      </th>
+                      <th className='text-start' style={{ width: '20%' }}>
+                        Type
+                      </th>
+                      <th className='text-start' style={{ width: '20%' }}>
+                        Values
+                      </th>
+                      <th className='text-start' style={{ width: '20%' }}>
+                        Products
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {values.sharedOptions.map((unit, idex) => (
+                      <tr id='addr0' key={idex}>
+                        <td>
+                          <div class='form-check text-center'>
+                            <input
+                              class='form-check-input'
+                              type='checkbox'
+                              id='gridCheck'
+                              defaultChecked={
+                                values.sharedOptions[idex].selected
+                              }
+                              name='sharedOptions'
+                              onChange={toggleChange}
+                            />
+                            <label class='form-check-label' for='gridCheck'>
+                              {values.sharedOptions[idex].optionName}
+                            </label>
+                          </div>
+                        </td>
+                        <td>{values.sharedOptions[idex].displayLabel}</td>
+                        <td>{values.sharedOptions[idex].type}</td>
+                        <td>{values.sharedOptions[idex].values}</td>
+                        <td>{values.sharedOptions[idex].products}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </Modal.Body>
+              <Modal.Footer>
+                <div className='text-end'>
+                  <button
+                    type='button'
+                    className='btn'
+                    style={{ color: '#3469fa' }}
+                    onClick={() => setSharedModalShow(false)}
+                  >
+                    Cancel
+                  </button>
+                  <button
+                    type='button'
+                    className='btn btn-primary'
+                    onClick={() => setSharedModalShow(false)}
+                  >
+                    Add
+                  </button>
+                </div>
+              </Modal.Footer>
+            </Modal>
             <div className='bg-white' style={{ paddingBottom: '1rem' }}>
               <hr style={{ marginTop: '0', marginBottom: '1rem' }} />
               <div className='text-end' style={{ paddingRight: '1rem' }}>

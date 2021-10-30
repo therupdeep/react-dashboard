@@ -33,7 +33,7 @@ import draftToHtml from 'draftjs-to-html';
 
 class App extends React.Component {
   state = {
-    step: 1,
+    step: 7,
     // Basic Information States
     isCheckedvisibleOnStorefront: false,
     productName: '',
@@ -76,6 +76,25 @@ class App extends React.Component {
     lowStock: '',
     // --> Variant states
     variantOptions: [],
+    setSelectAll: false,
+    sharedOptions: [
+      {
+        optionName: 'Color',
+        displayLabel: 'Color',
+        type: 'Dropdown',
+        values: 'Blue, Green, Red',
+        products: 0,
+        selected: false,
+      },
+      {
+        optionName: 'Product Size',
+        displayLabel: 'Size',
+        type: 'Dropdown',
+        values: 'M, S, XL',
+        products: 0,
+        selected: false,
+      },
+    ],
   };
 
   // go back to previous step
@@ -231,8 +250,12 @@ class App extends React.Component {
     else {
       this.setState({ [e.target.name]: !this.state[e.target.name] });
     }
+    console.log(this.state);
   };
-
+  //to be modified
+  toggleSharedChange = (idex) => (e) => {
+    this.setState({ [e.target.name]: !this.state[e.target.name] });
+  };
   render() {
     const step = this.state.step;
     const values = {
@@ -373,6 +396,7 @@ class App extends React.Component {
               <Variations
                 prevStep={this.prevStep}
                 nextStep={this.nextStep}
+                toggleChange={this.toggleChange}
                 handleAddValue={this.handleAddValue}
                 handleChangeVariantValue={this.handleChangeVariantValue}
                 handleChangeTable={this.handleChangeTable}
