@@ -245,6 +245,15 @@ class App extends React.Component {
     //for the show/hide advanced pricing button in pricing.js
     else if (e.target.title === 'showAdvancedPricing') {
       this.setState({ [e.target.title]: !this.state[e.target.title] });
+    } else if (e.target.name === 'setSelectAll') {
+      //Doing a callback function as the individual checkboxes depend upon selectall value
+      this.setState({ [e.target.name]: !this.state[e.target.name] }, () => {
+        const sharedOptions = [...this.state.sharedOptions];
+        sharedOptions.forEach((item) => {
+          item.selected = this.state.setSelectAll;
+        });
+        this.setState({ sharedOptions });
+      });
     }
     //for other checkboxes
     else {
@@ -254,7 +263,9 @@ class App extends React.Component {
   };
   //to be modified
   toggleSharedChange = (idex) => (e) => {
-    this.setState({ [e.target.name]: !this.state[e.target.name] });
+    const sharedOptions = [...this.state.sharedOptions];
+    sharedOptions[idex].selected = !sharedOptions[idex].selected;
+    this.setState({ sharedOptions });
   };
   render() {
     const step = this.state.step;
@@ -397,6 +408,7 @@ class App extends React.Component {
                 prevStep={this.prevStep}
                 nextStep={this.nextStep}
                 toggleChange={this.toggleChange}
+                toggleSharedChange={this.toggleSharedChange}
                 handleAddValue={this.handleAddValue}
                 handleChangeVariantValue={this.handleChangeVariantValue}
                 handleChangeTable={this.handleChangeTable}

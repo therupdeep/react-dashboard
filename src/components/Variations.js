@@ -7,6 +7,7 @@ const Variations = ({
   prevStep,
   nextStep,
   toggleChange,
+  toggleSharedChange,
   handleAddValue,
   handleChangeVariantValue,
   handleChangeTable,
@@ -312,7 +313,7 @@ const Variations = ({
                           class='form-check-input'
                           type='checkbox'
                           id='gridCheck'
-                          defaultChecked={values.setSelectAll}
+                          checked={values.setSelectAll}
                           name='setSelectAll'
                           onChange={toggleChange}
                           style={{ margin: '0.25em 0.25em 0 0' }}
@@ -349,11 +350,9 @@ const Variations = ({
                               class='form-check-input'
                               type='checkbox'
                               id='gridCheck'
-                              defaultChecked={
-                                values.sharedOptions[idex].selected
-                              }
+                              checked={values.sharedOptions[idex].selected}
                               name='sharedOptions'
-                              onChange={toggleChange}
+                              onChange={toggleSharedChange(idex)}
                             />
                             <label class='form-check-label' for='gridCheck'>
                               {values.sharedOptions[idex].optionName}
