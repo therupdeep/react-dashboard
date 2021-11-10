@@ -121,6 +121,7 @@ class App extends React.Component {
   // Handle fields change
   handleChange = (input) => (e) => {
     this.setState({ [input]: e.target.value });
+    console.log(this.state);
   };
   handleChangeVariantValue = (idx, index) => (e) => {
     const { name, value } = e.target;
