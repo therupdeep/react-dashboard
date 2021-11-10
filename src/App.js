@@ -33,7 +33,7 @@ import draftToHtml from 'draftjs-to-html';
 
 class App extends React.Component {
   state = {
-    step: 7,
+    step: 1,
     // Basic Information States
     isCheckedvisibleOnStorefront: false,
     productName: '',
