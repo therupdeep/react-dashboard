@@ -1,6 +1,9 @@
 import React from 'react';
 import MainHeading from '../../../../components/MainHeading';
+import Checkbox from '../../../../components/Checkbox';
 import styles from './styles';
+import TextBoxReq from '../../../../components/TextBoxReq';
+import TextBox from '../../../../components/TextBox';
 
 const BasicInformationCard = ({
   nextStep,
@@ -18,45 +21,25 @@ const BasicInformationCard = ({
       <br />
       <div>
         <form>
-          <div class='form-group'>
-            <div class='form-check'>
-              <input
-                class='form-check-input'
-                type='checkbox'
-                id='gridCheck'
-                defaultChecked={values.isCheckedvisibleOnStorefront}
-                name='isCheckedvisibleOnStorefront'
-                onChange={toggleChange}
-              />
-              <label class='form-check-label' for='gridCheck'>
-                Visible on Storefront
-              </label>
-            </div>
-          </div>
+          <Checkbox
+            toggleChange={toggleChange}
+            label='Visible on Storefront'
+            name='isCheckedvisibleOnStorefront'
+            defaultValue={values.isCheckedvisibleOnStorefront}
+          />
           <div class='row'>
-            <div class='form-group col-md-6 col-sm-12'>
-              <label for='productName'>
-                Product Name <span style={{ color: 'red' }}>*</span>
-              </label>
-              <input
-                type='text'
-                class='form-control'
-                placeholder='Sample Product Name'
-                value={values.productName}
-                onChange={handleChange('productName')}
-                required
-              />
-            </div>
-            <div class='form-group col-md-6 col-sm-12'>
-              <label for='sku'>SKU</label>
-              <input
-                type='text'
-                class='form-control'
-                placeholder='THK-1138'
-                value={values.sku}
-                onChange={handleChange('sku')}
-              />
-            </div>
+            <TextBoxReq
+              label='Product Name'
+              placeholder='Sample Product Name'
+              value={values.productName}
+              onChange={handleChange('productName')}
+            />
+            <TextBox
+              label='SKU'
+              placeholder='THK-1138'
+              value={values.sku}
+              onChange={handleChange('sku')}
+            />
           </div>
           <div class='row'>
             <div class='form-group col-md-6 col-sm-12'>

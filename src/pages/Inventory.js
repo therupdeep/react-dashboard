@@ -1,5 +1,6 @@
 import React from 'react';
 import './../css/component.css';
+import Checkbox from '../components/Checkbox';
 
 const Inventory = ({
   prevStep,
@@ -27,21 +28,12 @@ const Inventory = ({
         <br />
         <div>
           <form>
-            <div class='form-group'>
-              <div class='form-check'>
-                <input
-                  class='form-check-input'
-                  type='checkbox'
-                  id='gridCheck'
-                  defaultChecked={values.trackInventory}
-                  name='trackInventory'
-                  onChange={toggleChange}
-                />
-                <label class='form-check-label' for='gridCheck'>
-                  Track Inventory
-                </label>
-              </div>
-            </div>
+            <Checkbox
+              toggleChange={toggleChange}
+              label='Track Inventory'
+              name='trackInventory'
+              defaultValue={values.trackInventory}
+            />
             {/* conditional rendering based on checked value of track inventory checkbox */}
             {values.trackInventory ? (
               <div>
