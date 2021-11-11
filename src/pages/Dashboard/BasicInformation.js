@@ -1,6 +1,6 @@
 import React from 'react';
-import './../css/component.css';
-import PageHeader from '../components/PageHeader';
+import './../../css/component.css';
+import PageHeader from '../../components/PageHeader';
 import BasicInformationCard from './BasicInformation/components/BasicInformationCard';
 
 const BasicInformation = ({ nextStep, toggleChange, handleChange, values }) => {

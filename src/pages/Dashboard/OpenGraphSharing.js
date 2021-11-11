@@ -1,11 +1,7 @@
 import React from 'react';
-import './../css/component.css';
+import './../../css/component.css';
 
-const StorefrontDetails = ({ prevStep, nextStep, handleChange, values }) => {
-  const Continue = (e) => {
-    e.preventDefault();
-    nextStep();
-  };
+const OpenGraphSharing = ({ prevStep, nextStep, handleChange, values }) => {
   const Previous = (e) => {
     e.preventDefault();
     prevStep();
@@ -13,11 +9,11 @@ const StorefrontDetails = ({ prevStep, nextStep, handleChange, values }) => {
   return (
     <div>
       <div style={{ textAlign: 'center' }}>
-        <h5 style={{ fontWeight: '600' }}>Storefront</h5>
+        <h5 style={{ fontWeight: '600' }}>SEO {'&'} Sharing</h5>
         <div></div>
       </div>
       <div className='tab-card'>
-        <h5 style={{ fontWeight: '600' }}>Storefront Details</h5>
+        <h5 style={{ fontWeight: '600' }}>Open Graph Sharing</h5>
         <br />
         <div>
           <form>
@@ -44,9 +40,8 @@ const StorefrontDetails = ({ prevStep, nextStep, handleChange, values }) => {
                 type='button'
                 className='btn btn-outline-primary'
                 style={{ minWidth: '10vw' }}
-                onClick={Continue}
               >
-                NEXT
+                SUBMIT
               </button>
             </div>
           </form>
@@ -56,4 +51,4 @@ const StorefrontDetails = ({ prevStep, nextStep, handleChange, values }) => {
   );
 };
 
-export default StorefrontDetails;
+export default OpenGraphSharing;

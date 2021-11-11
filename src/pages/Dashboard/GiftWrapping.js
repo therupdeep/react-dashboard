@@ -1,7 +1,7 @@
 import React from 'react';
-import './../css/component.css';
+import './../../css/component.css';
 
-const DimensionsWeights = ({ prevStep, nextStep, handleChange, values }) => {
+const GiftWrapping = ({ prevStep, nextStep, handleChange, values }) => {
   const Continue = (e) => {
     e.preventDefault();
     nextStep();
@@ -17,7 +17,7 @@ const DimensionsWeights = ({ prevStep, nextStep, handleChange, values }) => {
         <div></div>
       </div>
       <div className='tab-card'>
-        <h5 style={{ fontWeight: '600' }}>Dimensions {'&'} Weights</h5>
+        <h5 style={{ fontWeight: '600' }}>Gift Wrapping</h5>
         <br />
         <div>
           <form>
@@ -56,4 +56,4 @@ const DimensionsWeights = ({ prevStep, nextStep, handleChange, values }) => {
   );
 };
 
-export default DimensionsWeights;
+export default GiftWrapping;

@@ -1,7 +1,7 @@
 import React from 'react';
-import './../css/component.css';
+import './../../css/component.css';
 
-const GiftWrapping = ({ prevStep, nextStep, handleChange, values }) => {
+const Customizations = ({ prevStep, nextStep, handleChange, values }) => {
   const Continue = (e) => {
     e.preventDefault();
     nextStep();
@@ -13,11 +13,11 @@ const GiftWrapping = ({ prevStep, nextStep, handleChange, values }) => {
   return (
     <div>
       <div style={{ textAlign: 'center' }}>
-        <h5 style={{ fontWeight: '600' }}>Fulfillment</h5>
+        <h5 style={{ fontWeight: '600' }}>Product Options</h5>
         <div></div>
       </div>
       <div className='tab-card'>
-        <h5 style={{ fontWeight: '600' }}>Gift Wrapping</h5>
+        <h5 style={{ fontWeight: '600' }}>Customizations</h5>
         <br />
         <div>
           <form>
@@ -56,4 +56,4 @@ const GiftWrapping = ({ prevStep, nextStep, handleChange, values }) => {
   );
 };
 
-export default GiftWrapping;
+export default Customizations;

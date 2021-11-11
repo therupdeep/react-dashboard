@@ -1,6 +1,6 @@
 import React from 'react';
-import './../css/component.css';
-import Checkbox from '../components/Checkbox';
+import './../../css/component.css';
+import Checkbox from '../../components/Checkbox';
 
 const Inventory = ({
   prevStep,

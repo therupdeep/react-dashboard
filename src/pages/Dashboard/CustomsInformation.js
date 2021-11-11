@@ -1,7 +1,11 @@
 import React from 'react';
-import './../css/component.css';
+import './../../css/component.css';
 
-const OpenGraphSharing = ({ prevStep, nextStep, handleChange, values }) => {
+const CustomsInformation = ({ prevStep, nextStep, handleChange, values }) => {
+  const Continue = (e) => {
+    e.preventDefault();
+    nextStep();
+  };
   const Previous = (e) => {
     e.preventDefault();
     prevStep();
@@ -9,11 +13,11 @@ const OpenGraphSharing = ({ prevStep, nextStep, handleChange, values }) => {
   return (
     <div>
       <div style={{ textAlign: 'center' }}>
-        <h5 style={{ fontWeight: '600' }}>SEO {'&'} Sharing</h5>
+        <h5 style={{ fontWeight: '600' }}>Fulfillment</h5>
         <div></div>
       </div>
       <div className='tab-card'>
-        <h5 style={{ fontWeight: '600' }}>Open Graph Sharing</h5>
+        <h5 style={{ fontWeight: '600' }}>Customs Information</h5>
         <br />
         <div>
           <form>
@@ -40,8 +44,9 @@ const OpenGraphSharing = ({ prevStep, nextStep, handleChange, values }) => {
                 type='button'
                 className='btn btn-outline-primary'
                 style={{ minWidth: '10vw' }}
+                onClick={Continue}
               >
-                SUBMIT
+                NEXT
               </button>
             </div>
           </form>
@@ -51,4 +56,4 @@ const OpenGraphSharing = ({ prevStep, nextStep, handleChange, values }) => {
   );
 };
 
-export default OpenGraphSharing;
+export default CustomsInformation;

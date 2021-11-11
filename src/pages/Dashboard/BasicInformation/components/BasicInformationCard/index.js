@@ -1,9 +1,9 @@
 import React from 'react';
-import MainHeading from '../../../../components/MainHeading';
-import Checkbox from '../../../../components/Checkbox';
+import MainHeading from '../../../../../components/MainHeading';
+import Checkbox from '../../../../../components/Checkbox';
 import styles from './styles';
-import TextBoxReq from '../../../../components/TextBoxReq';
-import TextBox from '../../../../components/TextBox';
+import TextBoxReq from '../../../../../components/TextBoxReq';
+import TextBox from '../../../../../components/TextBox';
 
 const BasicInformationCard = ({
   nextStep,

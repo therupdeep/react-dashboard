@@ -1,5 +1,5 @@
 import React from 'react';
-import './../css/component.css';
+import './../../css/component.css';
 
 const ImagesVideos = ({ prevStep, nextStep, handleChange, values }) => {
   const Continue = (e) => {

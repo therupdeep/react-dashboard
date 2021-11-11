@@ -1,7 +1,7 @@
 import React from 'react';
-import './../css/component.css';
+import './../../css/component.css';
 
-const CustomsInformation = ({ prevStep, nextStep, handleChange, values }) => {
+const ShippingDetails = ({ prevStep, nextStep, handleChange, values }) => {
   const Continue = (e) => {
     e.preventDefault();
     nextStep();
@@ -17,7 +17,7 @@ const CustomsInformation = ({ prevStep, nextStep, handleChange, values }) => {
         <div></div>
       </div>
       <div className='tab-card'>
-        <h5 style={{ fontWeight: '600' }}>Customs Information</h5>
+        <h5 style={{ fontWeight: '600' }}>Shipping Details</h5>
         <br />
         <div>
           <form>
@@ -56,4 +56,4 @@ const CustomsInformation = ({ prevStep, nextStep, handleChange, values }) => {
   );
 };
 
-export default CustomsInformation;
+export default ShippingDetails;

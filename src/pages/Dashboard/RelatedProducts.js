@@ -1,7 +1,7 @@
 import React from 'react';
-import './../css/component.css';
+import './../../css/component.css';
 
-const SEO = ({ prevStep, nextStep, handleChange, values }) => {
+const RelatedProducts = ({ prevStep, nextStep, handleChange, values }) => {
   const Continue = (e) => {
     e.preventDefault();
     nextStep();
@@ -13,11 +13,11 @@ const SEO = ({ prevStep, nextStep, handleChange, values }) => {
   return (
     <div>
       <div style={{ textAlign: 'center' }}>
-        <h5 style={{ fontWeight: '600' }}>SEO {'&'} Sharing</h5>
+        <h5 style={{ fontWeight: '600' }}>Storefront</h5>
         <div></div>
       </div>
       <div className='tab-card'>
-        <h5 style={{ fontWeight: '600' }}>SEO</h5>
+        <h5 style={{ fontWeight: '600' }}>Related Products</h5>
         <br />
         <div>
           <form>
@@ -56,4 +56,4 @@ const SEO = ({ prevStep, nextStep, handleChange, values }) => {
   );
 };
 
-export default SEO;
+export default RelatedProducts;

@@ -4,26 +4,26 @@
 // state values are passed as props to the components which are rendered
 
 import React from 'react';
-import Sidemenu from './pages/SideMenu';
-import Navbar from './pages/Navbar';
-import BasicInformation from './pages/BasicInformation';
-import Description from './pages/Description';
-import ImagesVideos from './pages/ImagesVideos';
-import ProductIdentifiers from './pages/ProductIdentifiers';
-import Pricing from './pages/Pricing';
-import Inventory from './pages/Inventory';
-import Variations from './pages/Variations';
-import Customizations from './pages/Customizations';
-import StorefrontDetails from './pages/StorefrontDetails';
-import CustomFields from './pages/CustomFields';
-import RelatedProducts from './pages/RelatedProducts';
-import DimensionsWeights from './pages/DimensionsWeights';
-import ShippingDetails from './pages/ShippingDetails';
-import Purchasability from './pages/Purchasability';
-import GiftWrapping from './pages/GiftWrapping';
-import CustomsInformation from './pages/CustomsInformation';
-import SEO from './pages/SEO';
-import OpenGraphSharing from './pages/OpenGraphSharing';
+import Sidemenu from './pages/Dashboard/SideMenu';
+import Navbar from './pages/Dashboard/Navbar';
+import BasicInformation from './pages/Dashboard/BasicInformation';
+import Description from './pages/Dashboard/Description';
+import ImagesVideos from './pages/Dashboard/ImagesVideos';
+import ProductIdentifiers from './pages/Dashboard/ProductIdentifiers';
+import Pricing from './pages/Dashboard/Pricing';
+import Inventory from './pages/Dashboard/Inventory';
+import Variations from './pages/Dashboard/Variations';
+import Customizations from './pages/Dashboard/Customizations';
+import StorefrontDetails from './pages/Dashboard/StorefrontDetails';
+import CustomFields from './pages/Dashboard/CustomFields';
+import RelatedProducts from './pages/Dashboard/RelatedProducts';
+import DimensionsWeights from './pages/Dashboard/DimensionsWeights';
+import ShippingDetails from './pages/Dashboard/ShippingDetails';
+import Purchasability from './pages/Dashboard/Purchasability';
+import GiftWrapping from './pages/Dashboard/GiftWrapping';
+import CustomsInformation from './pages/Dashboard/CustomsInformation';
+import SEO from './pages/Dashboard/SEO';
+import OpenGraphSharing from './pages/Dashboard/OpenGraphSharing';
 
 import './../src/App.css';
 import './../node_modules/font-awesome/css/font-awesome.min.css';

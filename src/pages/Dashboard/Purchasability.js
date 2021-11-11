@@ -1,7 +1,7 @@
 import React from 'react';
-import './../css/component.css';
+import './../../css/component.css';
 
-const CustomFields = ({ prevStep, nextStep, handleChange, values }) => {
+const Purchasability = ({ prevStep, nextStep, handleChange, values }) => {
   const Continue = (e) => {
     e.preventDefault();
     nextStep();
@@ -13,11 +13,11 @@ const CustomFields = ({ prevStep, nextStep, handleChange, values }) => {
   return (
     <div>
       <div style={{ textAlign: 'center' }}>
-        <h5 style={{ fontWeight: '600' }}>Storefront</h5>
+        <h5 style={{ fontWeight: '600' }}>Fulfillment</h5>
         <div></div>
       </div>
       <div className='tab-card'>
-        <h5 style={{ fontWeight: '600' }}>Custom Fields</h5>
+        <h5 style={{ fontWeight: '600' }}>Purchasability</h5>
         <br />
         <div>
           <form>
@@ -56,4 +56,4 @@ const CustomFields = ({ prevStep, nextStep, handleChange, values }) => {
   );
 };
 
-export default CustomFields;
+export default Purchasability;
