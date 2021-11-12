@@ -1,8 +1,9 @@
 import React from 'react';
 import Dashboard from './pages/Dashboard';
+import Registration from './pages/Registration';
 
 const App = () => {
-  return <Dashboard />;
+  return <Registration />;
 };
 
 export default App;
