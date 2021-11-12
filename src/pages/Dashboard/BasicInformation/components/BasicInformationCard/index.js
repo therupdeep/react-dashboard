@@ -4,6 +4,7 @@ import Checkbox from '../../../../../components/Checkbox';
 import styles from './styles';
 import TextBoxReq from '../../../../../components/TextBoxReq';
 import TextBox from '../../../../../components/TextBox';
+import Button from '../../../../../components/Button';
 
 const BasicInformationCard = ({
   nextStep,
@@ -213,22 +214,13 @@ const BasicInformationCard = ({
           </div>
           <br />
           <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
-            <button
-              type='button'
-              className='btn btn-outline-primary'
-              style={{ minWidth: '10vw' }}
-            >
-              SAVE
-            </button>
+            <Button text='SAVE' buttonStyle={{ minWidth: '10vw' }} />
             &nbsp;&nbsp;
-            <button
-              type='button'
-              className='btn btn-outline-primary'
-              style={{ minWidth: '10vw' }}
+            <Button
               onClick={Continue}
-            >
-              NEXT
-            </button>
+              text='NEXT'
+              buttonStyle={{ minWidth: '10vw' }}
+            />
           </div>
         </form>
       </div>
