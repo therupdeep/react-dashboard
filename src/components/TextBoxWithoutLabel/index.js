@@ -1,15 +1,17 @@
 import React from 'react';
 
-const TextBoxWithoutLabel = ({ size, placeholder, value, onChange }) => {
+const TextBoxWithoutLabel = ({ placeholder, value, onChange }) => {
   return (
-    <div class={`form-group ${size} col-12`}>
-      <input
-        type='text'
-        class='form-control'
-        placeholder={placeholder}
-        value={value}
-        onChange={onChange}
-      />
+    <div className='row'>
+      <div class={`form-group col-12`}>
+        <input
+          type='text'
+          class='form-control'
+          placeholder={placeholder}
+          value={value}
+          onChange={onChange}
+        />
+      </div>
     </div>
   );
 };

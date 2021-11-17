@@ -12,6 +12,7 @@ class App extends Component {
     otp: '',
     emailId: '',
     password: '',
+    showPassword: false,
     step: 1,
     // Basic Information States
     isCheckedvisibleOnStorefront: false,
@@ -223,7 +224,10 @@ class App extends Component {
       this.setState({ [e.target.name]: e.target.value });
     }
     //for the show/hide advanced pricing button in pricing.js
-    else if (e.target.title === 'showAdvancedPricing') {
+    else if (
+      e.target.title === 'showAdvancedPricing' ||
+      e.target.title === 'showPassword'
+    ) {
       this.setState({ [e.target.title]: !this.state[e.target.title] });
     } else if (e.target.name === 'setSelectAll') {
       //Doing a callback function as the individual checkboxes depend upon selectall value
@@ -252,7 +256,11 @@ class App extends Component {
       ...this.state,
     };
     return (
-      <Registration values={values} handleChange={this.handleChange} />
+      <Registration
+        values={values}
+        handleChange={this.handleChange}
+        toggleChange={this.toggleChange}
+      />
       // <Dashboard
       //   values={values}
       //   prevStep={this.prevStep}
