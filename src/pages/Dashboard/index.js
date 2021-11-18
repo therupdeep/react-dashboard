@@ -47,18 +47,12 @@ const Dashboard = ({
   switch (step) {
     case 1:
       return (
-        <div className='homepage'>
-          <Navbar />
-          <div style={{ display: 'flex' }}>
-            <Sidemenu step={step} />
-            <BasicInformation
-              nextStep={nextStep}
-              toggleChange={toggleChange}
-              handleChange={handleChange}
-              values={values}
-            />
-          </div>
-        </div>
+        <BasicInformation
+          nextStep={nextStep}
+          toggleChange={toggleChange}
+          handleChange={handleChange}
+          values={values}
+        />
       );
     case 2:
       return (

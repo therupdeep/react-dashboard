@@ -7,6 +7,7 @@ import draftToHtml from 'draftjs-to-html';
 
 class App extends Component {
   state = {
+    //Registration --->
     registrationStep: 1,
     mobileNo: '',
     otp: '',
@@ -14,6 +15,8 @@ class App extends Component {
     password: '',
     showPassword: false,
     getUpdates: false,
+
+    //Dashboard ---->
     step: 1,
     // Basic Information States
     isCheckedvisibleOnStorefront: false,
@@ -88,6 +91,19 @@ class App extends Component {
   nextStep = () => {
     const { step } = this.state;
     this.setState({ step: step + 1 });
+  };
+  // go back to previous step
+  prevStepRegistration = () => {
+    const { registrationStep } = this.state;
+    this.setState({ registrationStep: registrationStep - 1 });
+    console.log(this.state);
+  };
+
+  // proceed to the next step
+  nextStepRegistration = () => {
+    const { registrationStep } = this.state;
+    this.setState({ registrationStep: registrationStep + 1 });
+    console.log(this.state);
   };
   onEditorStateChange = (descEditorState) => {
     this.setState({
@@ -257,25 +273,27 @@ class App extends Component {
       ...this.state,
     };
     return (
-      <Registration
-        values={values}
-        handleChange={this.handleChange}
-        toggleChange={this.toggleChange}
-      />
-      // <Dashboard
+      // <Registration
       //   values={values}
-      //   prevStep={this.prevStep}
-      //   nextStep={this.nextStep}
-      //   onEditorStateChange={this.onEditorStateChange}
+      //   prevStep={this.prevStepRegistration}
+      //   nextStep={this.nextStepRegistration}
       //   handleChange={this.handleChange}
       //   toggleChange={this.toggleChange}
-      //   toggleSharedChange={this.toggleSharedChange}
-      //   handleAddValue={this.handleAddValue}
-      //   handleChangeVariantValue={this.handleChangeVariantValue}
-      //   handleChangeTable={this.handleChangeTable}
-      //   handleAddRow={this.handleAddRow}
-      //   handleRemoveSpecificRow={this.handleRemoveSpecificRow}
       // />
+      <Dashboard
+        values={values}
+        prevStep={this.prevStep}
+        nextStep={this.nextStep}
+        onEditorStateChange={this.onEditorStateChange}
+        handleChange={this.handleChange}
+        toggleChange={this.toggleChange}
+        toggleSharedChange={this.toggleSharedChange}
+        handleAddValue={this.handleAddValue}
+        handleChangeVariantValue={this.handleChangeVariantValue}
+        handleChangeTable={this.handleChangeTable}
+        handleAddRow={this.handleAddRow}
+        handleRemoveSpecificRow={this.handleRemoveSpecificRow}
+      />
     );
   }
 }
