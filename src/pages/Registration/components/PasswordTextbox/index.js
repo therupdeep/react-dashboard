@@ -19,7 +19,7 @@ const PasswordTextBox = ({ showPassword, value, onChange, toggleChange }) => {
           cursor: 'pointer',
           position: 'absolute',
           right: '25px',
-          bottom: '38px',
+          top: '265px',
         }}
         title='showPassword'
         onClick={toggleChange}

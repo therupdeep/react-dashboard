@@ -1,5 +1,4 @@
 import React from 'react';
-import TextBoxWithoutLabel from '../../../../components/TextBoxWithoutLabel';
 import Button from '../../../../components/Button';
 
 const MobileNoTextBox = ({ value, onChange }) => {

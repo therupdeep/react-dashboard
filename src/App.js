@@ -13,6 +13,7 @@ class App extends Component {
     emailId: '',
     password: '',
     showPassword: false,
+    getUpdates: false,
     step: 1,
     // Basic Information States
     isCheckedvisibleOnStorefront: false,
@@ -223,7 +224,7 @@ class App extends Component {
     else if (e.target.name === 'levelofInventoryTracking') {
       this.setState({ [e.target.name]: e.target.value });
     }
-    //for the show/hide advanced pricing button in pricing.js
+    //for the show/hide advanced pricing button in pricing.js & show/hide password
     else if (
       e.target.title === 'showAdvancedPricing' ||
       e.target.title === 'showPassword'
