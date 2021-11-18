@@ -326,46 +326,6 @@ const Dashboard = ({
 
     default:
   }
-  // return (
-  //   <div className='homepage'>
-  //     <Navbar />
-  //     <div style={{ display: 'flex' }}>
-  //       <Sidemenu step={step} />
-  //       <div>
-  //         <BasicInformation
-  //           nextStep={nextStep}
-  //           toggleChange={this.toggleChange}
-  //           handleChange={this.handleChange}
-  //           values={values}
-  //         />
-  //         <Description
-  //           prevStep={this.prevStep}
-  //           nextStep={this.nextStep}
-  //           handleChange={this.handleChange}
-  //           values={values}
-  //         />
-  //         <Description
-  //           prevStep={this.prevStep}
-  //           nextStep={this.nextStep}
-  //           handleChange={this.handleChange}
-  //           values={values}
-  //         />
-  //         <Description
-  //           prevStep={this.prevStep}
-  //           nextStep={this.nextStep}
-  //           handleChange={this.handleChange}
-  //           values={values}
-  //         />
-  //         <Description
-  //           prevStep={this.prevStep}
-  //           nextStep={this.nextStep}
-  //           handleChange={this.handleChange}
-  //           values={values}
-  //         />
-  //       </div>
-  //     </div>
-  //   </div>
-  // );
 };
 
 export default Dashboard;
