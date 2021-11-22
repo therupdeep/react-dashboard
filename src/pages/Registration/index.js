@@ -1,5 +1,6 @@
 import React from 'react';
 import AccountRegistration from './AccountRegistration';
+import GSTDetails from './GSTDetails';
 
 const Registration = ({
   values,
@@ -9,13 +10,15 @@ const Registration = ({
   toggleChange,
 }) => {
   return (
-    <AccountRegistration
-      values={values}
-      prevStep={prevStep}
-      nextStep={nextStep}
-      handleChange={handleChange}
-      toggleChange={toggleChange}
-    />
+    // <AccountRegistration
+    //   values={values}
+    //   prevStep={prevStep}
+    //   nextStep={nextStep}
+    //   handleChange={handleChange}
+    //   toggleChange={toggleChange}
+    // />
+
+    <GSTDetails />
   );
 };
 

@@ -273,27 +273,27 @@ class App extends Component {
       ...this.state,
     };
     return (
-      // <Registration
-      //   values={values}
-      //   prevStep={this.prevStepRegistration}
-      //   nextStep={this.nextStepRegistration}
-      //   handleChange={this.handleChange}
-      //   toggleChange={this.toggleChange}
-      // />
-      <Dashboard
+      <Registration
         values={values}
-        prevStep={this.prevStep}
-        nextStep={this.nextStep}
-        onEditorStateChange={this.onEditorStateChange}
+        prevStep={this.prevStepRegistration}
+        nextStep={this.nextStepRegistration}
         handleChange={this.handleChange}
         toggleChange={this.toggleChange}
-        toggleSharedChange={this.toggleSharedChange}
-        handleAddValue={this.handleAddValue}
-        handleChangeVariantValue={this.handleChangeVariantValue}
-        handleChangeTable={this.handleChangeTable}
-        handleAddRow={this.handleAddRow}
-        handleRemoveSpecificRow={this.handleRemoveSpecificRow}
       />
+      // <Dashboard
+      //   values={values}
+      //   prevStep={this.prevStep}
+      //   nextStep={this.nextStep}
+      //   onEditorStateChange={this.onEditorStateChange}
+      //   handleChange={this.handleChange}
+      //   toggleChange={this.toggleChange}
+      //   toggleSharedChange={this.toggleSharedChange}
+      //   handleAddValue={this.handleAddValue}
+      //   handleChangeVariantValue={this.handleChangeVariantValue}
+      //   handleChangeTable={this.handleChangeTable}
+      //   handleAddRow={this.handleAddRow}
+      //   handleRemoveSpecificRow={this.handleRemoveSpecificRow}
+      // />
     );
   }
 }
