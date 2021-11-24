@@ -1,65 +1,22 @@
 import React from 'react';
+import styles from './styles';
+import NavItem from './components/NavItem';
 
 const HeaderNav = () => {
   return (
     <div>
-      <div style={{ paddingLeft: '20px' }}>
+      <div style={styles.topText}>
         Please complete all steps below to start selling
       </div>
 
-      <ul class='nav' style={{ flexWrap: 'nowrap' }}>
-        <li
-          class='nav-item'
-          style={{ borderBottom: '1px solid black', width: '8rem' }}
-        >
-          <div
-            class='nav-link text-center'
-            aria-current='page'
-            href='#'
-            style={{ padding: '10px' }}
-          >
-            <i class='fas fa-hashtag fa-lg'></i>
-            <div>GST Details</div>
-          </div>
-        </li>
-        <li
-          class='nav-item'
-          style={{ borderBottom: '1px solid black', width: '8rem' }}
-        >
-          <div
-            class='nav-link text-center'
-            href='#'
-            style={{ padding: '10px' }}
-          >
-            <i class='fas fa-map-marker-alt fa-lg'></i>
-            <div>Pickup Address</div>
-          </div>
-        </li>
-        <li
-          class='nav-item'
-          style={{ borderBottom: '1px solid black', width: '8rem' }}
-        >
-          <div
-            class='nav-link text-center'
-            href='#'
-            style={{ padding: '10px' }}
-          >
-            <i class='fas fa-university fa-lg'></i>
-            <div>Bank Details</div>
-          </div>
-        </li>
-        <li
-          class='nav-item'
-          style={{
-            borderBottom: '1px solid black',
-            width: '8rem',
-          }}
-        >
-          <div class='nav-link text-center' style={{ padding: '10px' }}>
-            <i class='fas fa-user fa-lg'></i>
-            <div>Supplier Details</div>
-          </div>
-        </li>
+      <ul class='nav' style={styles.list}>
+        <NavItem text='GST Details' iconClass='fas fa-hashtag fa-lg' />
+        <NavItem
+          text='Pickup Address'
+          iconClass='fas fa-map-marker-alt fa-lg'
+        />
+        <NavItem text='Bank Details' iconClass='fas fa-university fa-lg' />
+        <NavItem text='Supplier Details' iconClass='fas fa-user fa-lg' />
       </ul>
     </div>
   );
