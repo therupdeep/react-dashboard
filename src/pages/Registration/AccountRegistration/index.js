@@ -1,6 +1,6 @@
 import React from 'react';
 import TextBoxWithoutLabel from '../../../components/TextBoxWithoutLabel';
-import MobileNoTextBox from '../components/MobileNoTextBox';
+import TextboxWithButton from '../components/TextboxWithButton';
 import PasswordTextBox from '../components/PasswordTextbox';
 import PasswordConditions from '../components/PasswordConditions';
 import UpdatesCheckbox from '../components/UpdatesCheckbox';
@@ -34,7 +34,9 @@ const AccountRegistration = ({
             Create your account to start selling
           </h6>
           <form>
-            <MobileNoTextBox
+            <TextboxWithButton
+              placeholder='Mobile Number'
+              buttonText='Send OTP'
               value={values.mobileNo}
               onChange={handleChange('mobileNo')}
             />
@@ -60,11 +62,7 @@ const AccountRegistration = ({
               name='getUpdates'
               onChange={toggleChange}
             />
-            <Button
-              text='Create Account'
-              onClick={Continue}
-              buttonStyle={{ width: '100%' }}
-            />
+            <Button text='Create Account' onClick={Continue} />
             <div style={{ textAlign: 'center', paddingTop: '10px' }}>
               By clicking you agree to our Terms And Conditions
             </div>

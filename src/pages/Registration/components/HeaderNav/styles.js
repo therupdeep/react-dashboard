@@ -1,6 +1,9 @@
 const styles = {
   topText: {
     paddingLeft: '20px',
+    backgroundColor: 'rgba(0,0,0,0.04)',
+    paddingTop: '10px',
+    paddingBottom: '10px',
   },
   list: {
     flexWrap: 'nowrap',

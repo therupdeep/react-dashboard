@@ -18,7 +18,13 @@ const Registration = ({
     //   toggleChange={toggleChange}
     // />
 
-    <GSTDetails />
+    <GSTDetails
+      values={values}
+      prevStep={prevStep}
+      nextStep={nextStep}
+      handleChange={handleChange}
+      toggleChange={toggleChange}
+    />
   );
 };
 

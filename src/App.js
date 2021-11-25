@@ -16,6 +16,9 @@ class App extends Component {
     showPassword: false,
     getUpdates: false,
 
+    //GST Details --->
+    gstIN: '',
+
     //Dashboard ---->
     step: 1,
     // Basic Information States
