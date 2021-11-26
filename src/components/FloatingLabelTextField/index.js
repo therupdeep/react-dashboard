@@ -1,5 +1,4 @@
 import React from 'react';
-import Button from '../../../../components/Button';
 import TextField from '@mui/material/TextField';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
@@ -11,11 +10,11 @@ const theme = createTheme({
   },
 });
 
-const TextboxWithButton = ({ label, buttonText, value, onChange }) => {
+const FloatingLabelTextField = ({ label, value, onChange }) => {
   return (
     <ThemeProvider theme={theme}>
       <div className='row'>
-        <div class='form-group col-md-9 col-sm-9 col-12'>
+        <div className='form-group col-12'>
           <TextField
             id='outlined-basic'
             label={label}
@@ -26,14 +25,9 @@ const TextboxWithButton = ({ label, buttonText, value, onChange }) => {
             onChange={onChange}
           />
         </div>
-        <Button
-          text={buttonText}
-          classes='form-group col-md-3 col-sm-3 col-12'
-          buttonStyle={{ width: '100%' }}
-        />
       </div>
     </ThemeProvider>
   );
 };
 
-export default TextboxWithButton;
+export default FloatingLabelTextField;

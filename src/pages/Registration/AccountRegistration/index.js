@@ -1,10 +1,10 @@
 import React from 'react';
-import TextBoxWithoutLabel from '../../../components/TextBoxWithoutLabel';
 import TextboxWithButton from '../components/TextboxWithButton';
 import PasswordTextBox from '../components/PasswordTextbox';
 import PasswordConditions from '../components/PasswordConditions';
 import UpdatesCheckbox from '../components/UpdatesCheckbox';
 import Button from '../../../components/Button';
+import FloatingLabelTextField from '../../../components/FloatingLabelTextField';
 
 const AccountRegistration = ({
   values,
@@ -12,6 +12,7 @@ const AccountRegistration = ({
   nextStep,
   handleChange,
   toggleChange,
+  handleClickShowPassword,
 }) => {
   const Continue = (e) => {
     e.preventDefault();
@@ -24,7 +25,8 @@ const AccountRegistration = ({
         alignItems: 'center',
         justifyContent: 'center',
         height: '100vh',
-        backgroundColor: 'rgb(255,228,225)',
+        backgroundImage:
+          'url("https://cdn.pixabay.com/photo/2017/09/06/11/41/clean-2721102_1280.jpg")',
       }}
     >
       <div class='card' style={{ width: '30rem' }}>
@@ -35,18 +37,18 @@ const AccountRegistration = ({
           </h6>
           <form>
             <TextboxWithButton
-              placeholder='Mobile Number'
+              label='Mobile Number'
               buttonText='Send OTP'
               value={values.mobileNo}
               onChange={handleChange('mobileNo')}
             />
-            <TextBoxWithoutLabel
-              placeholder='Enter OTP'
+            <FloatingLabelTextField
+              label='Enter OTP'
               value={values.otp}
               onChange={handleChange('otp')}
             />
-            <TextBoxWithoutLabel
-              placeholder='Email ID'
+            <FloatingLabelTextField
+              label='Email ID'
               value={values.emailId}
               onChange={handleChange('emailId')}
             />
@@ -54,7 +56,7 @@ const AccountRegistration = ({
               showPassword={values.showPassword}
               value={values.password}
               onChange={handleChange('password')}
-              toggleChange={toggleChange}
+              handleClickShowPassword={handleClickShowPassword}
             />
             <PasswordConditions />
             <UpdatesCheckbox

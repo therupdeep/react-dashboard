@@ -271,6 +271,9 @@ class App extends Component {
     sharedOptions[idex].selected = !sharedOptions[idex].selected;
     this.setState({ sharedOptions });
   };
+  handleClickShowPassword = () => {
+    this.setState({ showPassword: !this.state.showPassword });
+  };
   render() {
     const values = {
       ...this.state,
@@ -282,6 +285,7 @@ class App extends Component {
         nextStep={this.nextStepRegistration}
         handleChange={this.handleChange}
         toggleChange={this.toggleChange}
+        handleClickShowPassword={this.handleClickShowPassword}
       />
       // <Dashboard
       //   values={values}

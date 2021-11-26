@@ -1,6 +1,7 @@
 import React from 'react';
 import AccountRegistration from './AccountRegistration';
 import GSTDetails from './GSTDetails';
+import PickupAddress from './PickupAddress';
 
 const Registration = ({
   values,
@@ -8,23 +9,32 @@ const Registration = ({
   nextStep,
   handleChange,
   toggleChange,
+  handleClickShowPassword,
 }) => {
   return (
-    // <AccountRegistration
+    <AccountRegistration
+      values={values}
+      prevStep={prevStep}
+      nextStep={nextStep}
+      handleChange={handleChange}
+      toggleChange={toggleChange}
+      handleClickShowPassword={handleClickShowPassword}
+    />
+
+    // <GSTDetails
     //   values={values}
     //   prevStep={prevStep}
     //   nextStep={nextStep}
     //   handleChange={handleChange}
     //   toggleChange={toggleChange}
     // />
-
-    <GSTDetails
-      values={values}
-      prevStep={prevStep}
-      nextStep={nextStep}
-      handleChange={handleChange}
-      toggleChange={toggleChange}
-    />
+    // <PickupAddress
+    //   values={values}
+    //   prevStep={prevStep}
+    //   nextStep={nextStep}
+    //   handleChange={handleChange}
+    //   toggleChange={toggleChange}
+    // />
   );
 };
 
