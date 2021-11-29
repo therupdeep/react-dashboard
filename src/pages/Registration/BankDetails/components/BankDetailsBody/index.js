@@ -1,10 +1,7 @@
 import React from 'react';
-import TextboxWithButton from '../../../components/TextboxWithButton';
 import Button from './../../../../../components/Button';
 import Info from '../../../components/Info';
 import FloatingLabelTextField from '../../../../../components/FloatingLabelTextField';
-import Pincode_City from '../../../components/Pincode_City';
-import StateMenu from '../../../components/StateMenu';
 
 const BankDetailsBody = ({ values, handleChange }) => {
   return (

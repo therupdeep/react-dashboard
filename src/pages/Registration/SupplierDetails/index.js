@@ -22,7 +22,11 @@ const SupplierDetails = ({
       <div class='card' style={{ width: '32rem' }}>
         <div class='card-body' style={{ padding: '0' }}>
           <HeaderNav />
-          <SupplierDetailsBody values={values} handleChange={handleChange} />
+          <SupplierDetailsBody
+            values={values}
+            handleChange={handleChange}
+            toggleChange={toggleChange}
+          />
         </div>
       </div>
     </div>

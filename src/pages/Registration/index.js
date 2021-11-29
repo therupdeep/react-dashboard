@@ -3,6 +3,7 @@ import AccountRegistration from './AccountRegistration';
 import BankDetails from './BankDetails';
 import GSTDetails from './GSTDetails';
 import PickupAddress from './PickupAddress';
+import SupplierDetails from './SupplierDetails';
 
 const Registration = ({
   values,
@@ -36,7 +37,14 @@ const Registration = ({
     //   handleChange={handleChange}
     //   toggleChange={toggleChange}
     // />
-    <BankDetails
+    // <BankDetails
+    //   values={values}
+    //   prevStep={prevStep}
+    //   nextStep={nextStep}
+    //   handleChange={handleChange}
+    //   toggleChange={toggleChange}
+    // />
+    <SupplierDetails
       values={values}
       prevStep={prevStep}
       nextStep={nextStep}

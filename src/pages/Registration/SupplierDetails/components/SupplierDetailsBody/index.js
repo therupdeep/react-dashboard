@@ -2,27 +2,33 @@ import React from 'react';
 import Checkbox from '../../../../../components/Checkbox';
 import TextboxWithButton from '../../../components/TextboxWithButton';
 import Button from './../../../../../components/Button';
+import FloatingLabelTextField from '../../../../../components/FloatingLabelTextField';
+import Info from '../../../components/Info';
 
-const SupplierDetailsBody = ({ values, handleChange }) => {
+const SupplierDetailsBody = ({ values, handleChange, toggleChange }) => {
   return (
     <form style={{ padding: '1rem 2rem' }}>
-      {/* Global component = Info */}
-      <Info />
-      <TextBoxWithoutLabel
-        placeholder='Store Name'
-        value={values.otp}
-        onChange={handleChange('otp')}
+      <Info text="'Store Name' is visible on the reseller app with your listed products" />
+      <FloatingLabelTextField
+        label='Store Name'
+        value={values.store_name}
+        onChange={handleChange('store_name')}
+        helperText='Eg. Business Name,Trade Name,etc.'
       />
-      <TextBoxWithoutLabel
-        placeholder='Your Full Name'
-        value={values.emailId}
-        onChange={handleChange('emailId')}
+      <FloatingLabelTextField
+        label='Your Full Name'
+        value={values.fullname}
+        onChange={handleChange('fullname')}
       />
-      <Checkbox />
-      <Button
-        text='Continue'
-        buttonStyle={{ width: '100%', marginTop: '40vh' }}
-      />
+      <div style={{ marginTop: '4rem' }}>
+        <Checkbox
+          toggleChange={toggleChange}
+          label='I agree to comply with Supplier Terms & Conditions'
+          name='supplier_terms'
+          defaultValue={values.supplier_terms}
+        />
+        <Button text='Submit' buttonStyle={{ width: '100%' }} />
+      </div>
     </form>
   );
 };

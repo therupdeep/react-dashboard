@@ -10,7 +10,7 @@ const theme = createTheme({
   },
 });
 
-const FloatingLabelTextField = ({ label, value, onChange }) => {
+const FloatingLabelTextField = ({ label, value, onChange, helperText }) => {
   return (
     <ThemeProvider theme={theme}>
       <div className='row'>
@@ -23,6 +23,7 @@ const FloatingLabelTextField = ({ label, value, onChange }) => {
             size='small'
             fullWidth
             onChange={onChange}
+            helperText={helperText}
           />
         </div>
       </div>

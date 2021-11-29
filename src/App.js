@@ -27,6 +27,16 @@ class App extends Component {
     city: '',
     st: 'Uttar Pradesh',
 
+    //Bank Details --->
+    acc_no: '',
+    acc_no2: '',
+    ifsc_code: '',
+
+    //Supplier Details --->
+    store_name: '',
+    fullname: '',
+    supplier_terms: false,
+
     //Dashboard ---->
     step: 1,
     // Basic Information States
