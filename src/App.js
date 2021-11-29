@@ -19,6 +19,14 @@ class App extends Component {
     //GST Details --->
     gstIN: '',
 
+    //Pickup Address --->
+    address_on_gst: false,
+    room_floor_buildingno: '',
+    st_local_landmk: '',
+    pin: '',
+    city: '',
+    st: 'Uttar Pradesh',
+
     //Dashboard ---->
     step: 1,
     // Basic Information States

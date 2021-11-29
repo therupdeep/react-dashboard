@@ -12,14 +12,14 @@ const Registration = ({
   handleClickShowPassword,
 }) => {
   return (
-    <AccountRegistration
-      values={values}
-      prevStep={prevStep}
-      nextStep={nextStep}
-      handleChange={handleChange}
-      toggleChange={toggleChange}
-      handleClickShowPassword={handleClickShowPassword}
-    />
+    // <AccountRegistration
+    //   values={values}
+    //   prevStep={prevStep}
+    //   nextStep={nextStep}
+    //   handleChange={handleChange}
+    //   toggleChange={toggleChange}
+    //   handleClickShowPassword={handleClickShowPassword}
+    // />
 
     // <GSTDetails
     //   values={values}
@@ -28,13 +28,13 @@ const Registration = ({
     //   handleChange={handleChange}
     //   toggleChange={toggleChange}
     // />
-    // <PickupAddress
-    //   values={values}
-    //   prevStep={prevStep}
-    //   nextStep={nextStep}
-    //   handleChange={handleChange}
-    //   toggleChange={toggleChange}
-    // />
+    <PickupAddress
+      values={values}
+      prevStep={prevStep}
+      nextStep={nextStep}
+      handleChange={handleChange}
+      toggleChange={toggleChange}
+    />
   );
 };
 

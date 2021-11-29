@@ -6,6 +6,15 @@ import InputAdornment from '@mui/material/InputAdornment';
 import FormControl from '@mui/material/FormControl';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: '#f0a4c2',
+    },
+  },
+});
 
 const PasswordTextBox = ({
   showPassword,
@@ -14,7 +23,7 @@ const PasswordTextBox = ({
   handleClickShowPassword,
 }) => {
   return (
-    <div>
+    <ThemeProvider theme={theme}>
       <div className='form-group'>
         <FormControl fullWidth variant='outlined'>
           <InputLabel htmlFor='outlined-adornment-password'>
@@ -40,27 +49,8 @@ const PasswordTextBox = ({
             label='Set Password'
           />
         </FormControl>
-        {/* <input
-          type={showPassword ? 'text' : 'password'}
-          class='form-control'
-          placeholder='Set Password'
-          value={value}
-          onChange={onChange}
-          required
-        /> */}
       </div>
-      {/* <i
-        class={showPassword ? 'fas fa-eye' : 'fas fa-eye-slash'}
-        style={{
-          cursor: 'pointer',
-          position: 'absolute',
-          right: '25px',
-          top: '265px',
-        }}
-        title='showPassword'
-        onClick={toggleChange}
-      ></i> */}
-    </div>
+    </ThemeProvider>
   );
 };
 

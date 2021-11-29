@@ -23,7 +23,11 @@ const PickupAddress = ({
       <div class='card' style={{ width: '32rem' }}>
         <div class='card-body' style={{ padding: '0' }}>
           <HeaderNav />
-          <PickupAddressBody values={values} handleChange={handleChange} />
+          <PickupAddressBody
+            values={values}
+            handleChange={handleChange}
+            toggleChange={toggleChange}
+          />
         </div>
       </div>
     </div>

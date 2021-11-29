@@ -64,7 +64,11 @@ const AccountRegistration = ({
               name='getUpdates'
               onChange={toggleChange}
             />
-            <Button text='Create Account' onClick={Continue} />
+            <Button
+              text='Create Account'
+              buttonStyle={{ width: '100%' }}
+              onClick={Continue}
+            />
             <div style={{ textAlign: 'center', paddingTop: '10px' }}>
               By clicking you agree to our Terms And Conditions
             </div>

@@ -6,7 +6,7 @@ const GSTDetailsBody = ({ values, handleChange }) => {
   return (
     <form style={{ padding: '1rem 2rem' }}>
       <TextboxWithButton
-        placeholder='Enter GSTIN'
+        label='Enter GSTIN'
         buttonText='Verify'
         value={values.gstIN}
         onChange={handleChange('gstIN')}
