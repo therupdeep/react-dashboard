@@ -1,31 +1,39 @@
 import React from 'react';
 import TextboxWithButton from '../../../components/TextboxWithButton';
 import Button from './../../../../../components/Button';
+import Info from '../../../components/Info';
+import FloatingLabelTextField from '../../../../../components/FloatingLabelTextField';
+import Pincode_City from '../../../components/Pincode_City';
+import StateMenu from '../../../components/StateMenu';
 
 const BankDetailsBody = ({ values, handleChange }) => {
   return (
     <form style={{ padding: '1rem 2rem' }}>
-      {/* Global component = Info */}
-      <Info />
-      <TextBoxWithoutLabel
-        placeholder='Account Number'
-        value={values.otp}
-        onChange={handleChange('otp')}
+      <Info text='Bank account should be in the name of registered business name or trade name as per GSTIN' />
+      <FloatingLabelTextField
+        label='Account Number'
+        value={values.acc_no}
+        onChange={handleChange('acc_no')}
       />
-      <TextBoxWithoutLabel
-        placeholder='Confirm Account Number'
-        value={values.emailId}
-        onChange={handleChange('emailId')}
+      <FloatingLabelTextField
+        label='Confirm Account Number'
+        value={values.acc_no2}
+        onChange={handleChange('acc_no2')}
       />
-      <TextBoxWithoutLabel
-        placeholder='IFSC Code'
-        value={values.emailId}
-        onChange={handleChange('emailId')}
+      <FloatingLabelTextField
+        label='IFSC Code'
+        value={values.ifsc_code}
+        onChange={handleChange('ifsc_code')}
       />
-      <BottomText />
+      <div>
+        <span>Don't remember IFSC Code? </span>
+        <span style={{ color: '#1769aa', fontWeight: 'bold' }}>
+          Find IFSC Code
+        </span>
+      </div>
       <Button
-        text='Continue'
-        buttonStyle={{ width: '100%', marginTop: '40vh' }}
+        text='Verify Bank Details'
+        buttonStyle={{ width: '100%', marginTop: '10vh' }}
       />
     </form>
   );

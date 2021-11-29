@@ -33,7 +33,6 @@ const PickupAddressBody = ({ values, handleChange, toggleChange }) => {
         city_onChange={handleChange('city')}
       />
       <StateMenu value={values.st} onChange={handleChange('st')} />
-      {/* <StateMenu /> */}
       <Button
         text='Continue'
         buttonStyle={{ width: '100%', marginTop: '10vh' }}
