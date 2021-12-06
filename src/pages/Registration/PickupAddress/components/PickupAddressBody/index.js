@@ -6,7 +6,16 @@ import FloatingLabelTextField from '../../../../../components/FloatingLabelTextF
 import Pincode_City from '../../../components/Pincode_City';
 import StateMenu from '../../../components/StateMenu';
 
-const PickupAddressBody = ({ values, handleChange, toggleChange }) => {
+const PickupAddressBody = ({
+  values,
+  handleChange,
+  toggleChange,
+  nextStep,
+}) => {
+  const Continue = (e) => {
+    e.preventDefault();
+    nextStep();
+  };
   return (
     <form style={{ padding: '1rem 2rem' }}>
       <Info text='Products will be picked up from this location for delivery' />
@@ -36,6 +45,7 @@ const PickupAddressBody = ({ values, handleChange, toggleChange }) => {
       <Button
         text='Continue'
         buttonStyle={{ width: '100%', marginTop: '10vh' }}
+        onClick={Continue}
       />
     </form>
   );

@@ -25,7 +25,7 @@ const PasswordTextBox = ({
   return (
     <ThemeProvider theme={theme}>
       <div className='form-group'>
-        <FormControl fullWidth variant='outlined'>
+        <FormControl fullWidth variant='outlined' required>
           <InputLabel htmlFor='outlined-adornment-password'>
             Set Password
           </InputLabel>

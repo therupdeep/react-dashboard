@@ -35,7 +35,7 @@ const AccountRegistration = ({
           <h6 class='card-subtitle mb-2 text-muted'>
             Create your account to start selling
           </h6>
-          <form>
+          <form onSubmit={Continue}>
             <TextboxWithButton
               label='Mobile Number'
               buttonText='Send OTP'
@@ -64,11 +64,7 @@ const AccountRegistration = ({
               name='getUpdates'
               onChange={toggleChange}
             />
-            <Button
-              text='Create Account'
-              buttonStyle={{ width: '100%' }}
-              onClick={Continue}
-            />
+            <Button text='Create Account' buttonStyle={{ width: '100%' }} />
             <div style={{ textAlign: 'center', paddingTop: '10px' }}>
               By clicking you agree to our Terms And Conditions
             </div>

@@ -16,6 +16,7 @@ const FloatingLabelTextField = ({ label, value, onChange, helperText }) => {
       <div className='row'>
         <div className='form-group col-12'>
           <TextField
+            required
             id='outlined-basic'
             label={label}
             variant='outlined'

@@ -27,6 +27,7 @@ const PickupAddress = ({
             values={values}
             handleChange={handleChange}
             toggleChange={toggleChange}
+            nextStep={nextStep}
           />
         </div>
       </div>

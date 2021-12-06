@@ -17,6 +17,7 @@ const TextboxWithButton = ({ label, buttonText, value, onChange }) => {
       <div className='row'>
         <div class='form-group col-md-9 col-sm-9 col-12'>
           <TextField
+            required
             id='outlined-basic'
             label={label}
             variant='outlined'

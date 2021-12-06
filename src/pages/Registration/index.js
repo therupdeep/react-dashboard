@@ -13,45 +13,64 @@ const Registration = ({
   toggleChange,
   handleClickShowPassword,
 }) => {
-  return (
-    // <AccountRegistration
-    //   values={values}
-    //   prevStep={prevStep}
-    //   nextStep={nextStep}
-    //   handleChange={handleChange}
-    //   toggleChange={toggleChange}
-    //   handleClickShowPassword={handleClickShowPassword}
-    // />
+  const step = values.registrationStep;
 
-    // <GSTDetails
-    //   values={values}
-    //   prevStep={prevStep}
-    //   nextStep={nextStep}
-    //   handleChange={handleChange}
-    //   toggleChange={toggleChange}
-    // />
-    // <PickupAddress
-    //   values={values}
-    //   prevStep={prevStep}
-    //   nextStep={nextStep}
-    //   handleChange={handleChange}
-    //   toggleChange={toggleChange}
-    // />
-    // <BankDetails
-    //   values={values}
-    //   prevStep={prevStep}
-    //   nextStep={nextStep}
-    //   handleChange={handleChange}
-    //   toggleChange={toggleChange}
-    // />
-    <SupplierDetails
-      values={values}
-      prevStep={prevStep}
-      nextStep={nextStep}
-      handleChange={handleChange}
-      toggleChange={toggleChange}
-    />
-  );
+  switch (step) {
+    case 1:
+      return (
+        <AccountRegistration
+          values={values}
+          prevStep={prevStep}
+          nextStep={nextStep}
+          handleChange={handleChange}
+          toggleChange={toggleChange}
+          handleClickShowPassword={handleClickShowPassword}
+        />
+      );
+    case 2:
+      return (
+        <GSTDetails
+          values={values}
+          prevStep={prevStep}
+          nextStep={nextStep}
+          handleChange={handleChange}
+          toggleChange={toggleChange}
+        />
+      );
+
+    case 3:
+      return (
+        <PickupAddress
+          values={values}
+          prevStep={prevStep}
+          nextStep={nextStep}
+          handleChange={handleChange}
+          toggleChange={toggleChange}
+        />
+      );
+
+    case 4:
+      return (
+        <BankDetails
+          values={values}
+          prevStep={prevStep}
+          nextStep={nextStep}
+          handleChange={handleChange}
+          toggleChange={toggleChange}
+        />
+      );
+
+    case 5:
+      return (
+        <SupplierDetails
+          values={values}
+          prevStep={prevStep}
+          nextStep={nextStep}
+          handleChange={handleChange}
+          toggleChange={toggleChange}
+        />
+      );
+  }
 };
 
 export default Registration;
