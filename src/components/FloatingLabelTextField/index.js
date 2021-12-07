@@ -11,6 +11,15 @@ const theme = createTheme({
 });
 
 const FloatingLabelTextField = ({ label, value, onChange, helperText }) => {
+  // const validateEmail = (email) => {
+  //   var re = /\S+@\S+\.\S+/;
+  //   return re.test(email);
+  // };
+  // const checkifEmail = (label, value) => {
+  //   if (label === 'Email ID') {
+  //     return !validateEmail(value);
+  //   } else return false;
+  // };
   return (
     <ThemeProvider theme={theme}>
       <div className='row'>

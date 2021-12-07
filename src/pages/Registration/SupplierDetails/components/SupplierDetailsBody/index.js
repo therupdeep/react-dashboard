@@ -15,7 +15,7 @@ const SupplierDetailsBody = ({
     nextStep();
   };
   return (
-    <form style={{ padding: '1rem 2rem' }}>
+    <form style={{ padding: '1rem 2rem' }} onSubmit={Continue}>
       <Info text="'Store Name' is visible on the reseller app with your listed products" />
       <FloatingLabelTextField
         label='Store Name'
@@ -35,11 +35,7 @@ const SupplierDetailsBody = ({
           name='supplier_terms'
           defaultValue={values.supplier_terms}
         />
-        <Button
-          text='Submit'
-          buttonStyle={{ width: '100%' }}
-          onClick={Continue}
-        />
+        <Button text='Submit' buttonStyle={{ width: '100%' }} />
       </div>
     </form>
   );

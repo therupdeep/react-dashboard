@@ -17,7 +17,7 @@ const PickupAddressBody = ({
     nextStep();
   };
   return (
-    <form style={{ padding: '1rem 2rem' }}>
+    <form style={{ padding: '1rem 2rem' }} onSubmit={Continue}>
       <Info text='Products will be picked up from this location for delivery' />
       <Checkbox
         toggleChange={toggleChange}
@@ -27,13 +27,13 @@ const PickupAddressBody = ({
       />
       <FloatingLabelTextField
         label='Room/ Floor/ Building Number'
-        value={values.otp}
-        onChange={handleChange('otp')}
+        value={values.room_floor_buildingno}
+        onChange={handleChange('room_floor_buildingno')}
       />
       <FloatingLabelTextField
         label='Street/ Locality/ Landmark'
-        value={values.emailId}
-        onChange={handleChange('emailId')}
+        value={values.st_local_landmk}
+        onChange={handleChange('st_local_landmk')}
       />
       <Pincode_City
         pincode_value={values.pin}
@@ -45,7 +45,6 @@ const PickupAddressBody = ({
       <Button
         text='Continue'
         buttonStyle={{ width: '100%', marginTop: '10vh' }}
-        onClick={Continue}
       />
     </form>
   );

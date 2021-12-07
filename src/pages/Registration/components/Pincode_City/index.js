@@ -21,6 +21,7 @@ const Pincode_City = ({
       <div className='row'>
         <div class='form-group col-md-6 col-sm-6 col-12'>
           <TextField
+            required
             id='outlined-basic'
             label='Pincode'
             variant='outlined'
@@ -32,6 +33,7 @@ const Pincode_City = ({
         </div>
         <div class='form-group col-md-6 col-sm-6 col-12'>
           <TextField
+            required
             id='outlined-basic'
             label='City'
             variant='outlined'

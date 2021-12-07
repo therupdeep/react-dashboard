@@ -9,7 +9,7 @@ const BankDetailsBody = ({ values, handleChange, nextStep }) => {
     nextStep();
   };
   return (
-    <form style={{ padding: '1rem 2rem' }}>
+    <form style={{ padding: '1rem 2rem' }} onSubmit={Continue}>
       <Info text='Bank account should be in the name of registered business name or trade name as per GSTIN' />
       <FloatingLabelTextField
         label='Account Number'
@@ -35,7 +35,6 @@ const BankDetailsBody = ({ values, handleChange, nextStep }) => {
       <Button
         text='Verify Bank Details'
         buttonStyle={{ width: '100%', marginTop: '10vh' }}
-        onClick={Continue}
       />
     </form>
   );
