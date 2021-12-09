@@ -8,8 +8,12 @@ const styles = {
   list: {
     flexWrap: 'nowrap',
   },
+  navItemActive: {
+    borderBottom: '2px solid #cc1075',
+    width: '8rem',
+  },
   navItem: {
-    borderBottom: '1px solid black',
+    borderBottom: '1px solid rgba(0,0,0,0.15)',
     width: '8rem',
   },
   navLink: {

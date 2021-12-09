@@ -22,7 +22,7 @@ const BankDetails = ({
     >
       <div class='card' style={{ width: '32rem' }}>
         <div class='card-body' style={{ padding: '0' }}>
-          <HeaderNav />
+          <HeaderNav step={values.registrationStep} />
           <BankDetailsBody
             values={values}
             handleChange={handleChange}

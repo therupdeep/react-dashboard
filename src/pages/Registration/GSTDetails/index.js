@@ -22,7 +22,7 @@ const GSTDetails = ({
     >
       <div class='card' style={{ width: '32rem' }}>
         <div class='card-body' style={{ padding: '0' }}>
-          <HeaderNav />
+          <HeaderNav step={values.registrationStep} />
           <GSTDetailsBody
             values={values}
             handleChange={handleChange}

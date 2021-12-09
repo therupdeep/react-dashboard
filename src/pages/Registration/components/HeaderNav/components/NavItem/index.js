@@ -1,9 +1,9 @@
 import React from 'react';
 import styles from '../../styles';
 
-const NavItem = ({ text, iconClass }) => {
+const NavItem = ({ text, iconClass, navItemStyle }) => {
   return (
-    <li class='nav-item' style={styles.navItem}>
+    <li class='nav-item' style={navItemStyle}>
       <div class='nav-link' style={styles.navLink}>
         <i class={iconClass}></i>
         <div>{text}</div>
