@@ -38,7 +38,7 @@ class App extends Component {
     supplier_terms: false,
 
     //Dashboard ---->
-    step: 1,
+    step: 0,
     // Basic Information States
     isCheckedvisibleOnStorefront: false,
     productName: '',
@@ -122,8 +122,9 @@ class App extends Component {
 
   // proceed to the next step
   nextStepRegistration = () => {
-    const { registrationStep } = this.state;
-    this.setState({ registrationStep: registrationStep + 1 });
+    const { registrationStep, step } = this.state;
+    if (registrationStep === 5) this.setState({ step: step + 1 });
+    else this.setState({ registrationStep: registrationStep + 1 });
     console.log(this.state);
   };
   onEditorStateChange = (descEditorState) => {
@@ -296,30 +297,35 @@ class App extends Component {
     const values = {
       ...this.state,
     };
-    return (
-      <Registration
-        values={values}
-        prevStep={this.prevStepRegistration}
-        nextStep={this.nextStepRegistration}
-        handleChange={this.handleChange}
-        toggleChange={this.toggleChange}
-        handleClickShowPassword={this.handleClickShowPassword}
-      />
-      // <Dashboard
-      //   values={values}
-      //   prevStep={this.prevStep}
-      //   nextStep={this.nextStep}
-      //   onEditorStateChange={this.onEditorStateChange}
-      //   handleChange={this.handleChange}
-      //   toggleChange={this.toggleChange}
-      //   toggleSharedChange={this.toggleSharedChange}
-      //   handleAddValue={this.handleAddValue}
-      //   handleChangeVariantValue={this.handleChangeVariantValue}
-      //   handleChangeTable={this.handleChangeTable}
-      //   handleAddRow={this.handleAddRow}
-      //   handleRemoveSpecificRow={this.handleRemoveSpecificRow}
-      // />
-    );
+    if (values.step === 0)
+      return (
+        <Registration
+          values={values}
+          prevStep={this.prevStepRegistration}
+          nextStep={this.nextStepRegistration}
+          handleChange={this.handleChange}
+          toggleChange={this.toggleChange}
+          handleClickShowPassword={this.handleClickShowPassword}
+        />
+      );
+    else if (values.step === 1) {
+      return (
+        <Dashboard
+          values={values}
+          prevStep={this.prevStep}
+          nextStep={this.nextStep}
+          onEditorStateChange={this.onEditorStateChange}
+          handleChange={this.handleChange}
+          toggleChange={this.toggleChange}
+          toggleSharedChange={this.toggleSharedChange}
+          handleAddValue={this.handleAddValue}
+          handleChangeVariantValue={this.handleChangeVariantValue}
+          handleChangeTable={this.handleChangeTable}
+          handleAddRow={this.handleAddRow}
+          handleRemoveSpecificRow={this.handleRemoveSpecificRow}
+        />
+      );
+    }
   }
 }
 
